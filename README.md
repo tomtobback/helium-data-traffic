@@ -10,7 +10,7 @@ Of course the assumption is that more and more people will start using this netw
 
 ## Hotspot analysis
 
-This plot is based on 7 days of traffic data (9-16 Feb 2022).
+This plot is based on 7 days of traffic data (9-16 Feb 2022). I ran the scripts again on 25 March 2022 and the plot looked very similar.
 
 ![](plot_output/20220216145329hotspots_data_packets7.png)
 
@@ -25,6 +25,13 @@ The [helium_data_traffic_extraction.py](helium_data_traffic_extraction.py) scrip
 - Half of the active hotspots saw less than 10 packets over a week
 
 With 'active hotspot' I mean a hotspot that sees real data traffic, not only the Proof-of-Coverage exchanges. 
+
+UPDATE 25 March 2022: I ran the script again for the last 3 days and saw these differences:
+* data packets down to per day 6.7M
+* average DC per data packet up to 2.68
+* the top hotspot took 2% of all traffic, based in China
+* the top 23 hotspots took 20% of all traffic
+
 
 ## Country analysis
 I made a [Google Map](https://www.google.com/maps/d/edit?mid=17hSI7ZxKkPSpJSIFSjUvicPkCYtHBkMg&usp=sharing) showing the 2,000 most active hotspots (70% of total data traffic).
@@ -102,6 +109,11 @@ And this is the list of most active countries based on the 7,000 most active hot
 - Europe sees around 60% of the total data traffic, and the USA around only 10%, which is less than each of Serbia, Greece and France.
 
 Note that although I hope this is interesting, data packet traffic is not a reliable metric to evaluate the actual use of the Helium network, as it can easily be inflated by people who have an interest to do so; that would be cheap both in terms of hardware and DC required. 
+
+UPDATE 25 March 2022: I ran the script again for the last 3 days (only retrieving the location of top 2337 hotspots) and saw these differences:
+* United States has increased from 10% to 18% of total data traffic
+* more than 5% of data traffic is seen by hotspots without location, i assume these are testing setups
+* the Netherlands and China have seen a large increase in data traffic
 
 ## Methodology
 

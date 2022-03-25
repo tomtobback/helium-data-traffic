@@ -1,0 +1,57 @@
+===========================================================
+GROUP DATA TRAFFIC PER COUNTRY
+===========================================================
+based on input file: csv_output/20220325103345hotspots_data_packets3_details.csv
+===========================================================
+               packet count share of traffic hotspot count avg packets per hotspot
+country                                                                           
+United States     2,617,409           18.47%           640                   4,090
+Taiwan            1,789,682           12.63%            57                  31,398
+fail                813,004            5.74%             0                     inf
+Netherlands         797,194            5.62%           292                   2,730
+France              651,928            4.60%           182                   3,582
+Germany             637,754            4.50%           127                   5,022
+Italy               563,494            3.98%           121                   4,657
+China               535,105            3.78%            20                  26,755
+Serbia              526,862            3.72%           134                   3,932
+Sweden              398,333            2.81%           116                   3,434
+Canada              297,009            2.10%           113                   2,628
+Thailand            253,295            1.79%            60                   4,222
+Greece              232,755            1.64%            66                   3,527
+Poland              160,722            1.13%            24                   6,697
+The Bahamas         149,633            1.06%             8                  18,704
+Turkey              143,768            1.01%            66                   2,178
+India               123,076            0.87%             2                  61,538
+United Kingdom      111,165            0.78%            43                   2,585
+Ukraine             110,793            0.78%            33                   3,357
+Switzerland          95,015            0.67%            33                   2,879
+Spain                80,068            0.56%            30                   2,669
+Romania              78,351            0.55%            33                   2,374
+Estonia              69,168            0.49%            37                   1,869
+Australia            35,658            0.25%            13                   2,743
+Belgium              35,643            0.25%            12                   2,970
+Norway               19,586            0.14%             7                   2,798
+Slovakia             15,853            0.11%             6                   2,642
+Slovenia             15,131            0.11%             7                   2,162
+Portugal             14,709            0.10%             6                   2,452
+Denmark              11,295            0.08%             6                   1,882
+Liechtenstein        10,498            0.07%             4                   2,624
+South Africa         10,392            0.07%             6                   1,732
+Bulgaria              9,914            0.07%             4                   2,478
+Lithuania             9,679            0.07%             6                   1,613
+Hungary               8,082            0.06%             3                   2,694
+Mexico                7,861            0.06%             2                   3,930
+Malta                 6,386            0.05%             4                   1,596
+South Korea           5,804            0.04%             1                   5,804
+Czechia               4,336            0.03%             2                   2,168
+Ireland               4,287            0.03%             3                   1,429
+Brazil                3,334            0.02%             2                   1,667
+Cyprus                2,969            0.02%             2                   1,484
+Zimbabwe              2,682            0.02%             1                   2,682
+Georgia               2,493            0.02%             2                   1,246
+Puerto Rico           1,241            0.01%             1                   1,241
+[sanity check]
+sum of shares: 80.95%
+sum of packets: 11473416
+sum of hotspots: 2337
+===========================================================

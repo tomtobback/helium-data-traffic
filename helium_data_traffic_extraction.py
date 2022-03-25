@@ -174,6 +174,9 @@ print('number of active hotspots:\t', hotspots_number,
 dcburns_sum = get_dcburns()
 dcburns_delta_pct = 100 * ((dcburns_sum - cum_dcs) / dcburns_sum)
 print('sanity check: \tdcburns sum:', dcburns_sum, 'delta:', str(round(dcburns_delta_pct, 2)) + '%')
+if (dcburns_delta_pct > 1):
+    print("delta exceeds 1% so our dataset is incomplete (http failed because too many requests?), STOP HERE")
+    quit()
 print('===========================================================')
 
 # sort the dictionary by the values, descending
