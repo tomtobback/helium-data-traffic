@@ -26,8 +26,8 @@ import datetime
 import csv
 import matplotlib.pyplot as plt
 
-FRACTION_THRESHOLD = 0.2    # cut the hotspot ranking when we reach this fraction 0-1
-NUMBER_OF_DAYS = 3          # how many days to go back from now
+FRACTION_THRESHOLD = 0.5    # cut the hotspot ranking when we reach this fraction 0-1
+NUMBER_OF_DAYS = 7          # how many days to go back from now
 USD_PER_DC = 0.00001        # https://docs.helium.com/use-the-network/console/data-credits
 
 # Helium requires a user-agent in the HTTP header

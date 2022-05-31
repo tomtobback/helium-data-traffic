@@ -19,7 +19,7 @@ import csv
 import pandas as pd
 
 # use this particular CSV file as input
-INPUT_CSV_FILE = "csv_output/20220325103345hotspots_data_packets3_details.csv"
+INPUT_CSV_FILE = "csv_output/20220531115029hotspots_data_packets7_details.csv"
 
 
 # START OF SCRIPT
@@ -33,6 +33,8 @@ print('===========================================================')
 with open(INPUT_CSV_FILE, 'r') as input_csvfile:
     # use pandas to read, groupby and sum
     hotspot_list = pd.read_csv(INPUT_CSV_FILE)
+    # fill empty country with 'None'
+    hotspot_list["country"].fillna("None", inplace = True)
     # create pandas dataframe with sums of each column to get sum of packets per country
     country_sums = hotspot_list.groupby('country').sum()
     # create pandas dataframe with count of hotspots per country

@@ -21,9 +21,9 @@ import datetime
 import csv
 
 # use this particular CSV file as input
-INPUT_CSV_FILE = "csv_output/20220325103345hotspots_data_packets3.csv"
+INPUT_CSV_FILE = "csv_output/20220531115029hotspots_data_packets7.csv"
 
-RANK_CUTOFF = 7000
+RANK_CUTOFF = 2000
 
 # Helium requires a user-agent in the HTTP header
 # https://docs.helium.com/api/blockchain/introduction
