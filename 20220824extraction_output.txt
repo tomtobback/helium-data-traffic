@@ -1,0 +1,1378 @@
+===========================================================
+RETRIEVE PACKETS AND DC DATA FROM THE HELIUM BLOCKCHAIN API
+===========================================================
+timespan: 7 day(s)
+first we load all the state channel data in this timespan
+each URL has a cursor to next batch of data
+===========================================================
+https://api.helium.io/v1/state_channels?min_time=-7%20day
+type                      timestamp  datetime                  hotspots    packets        DCs
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sIm1pbl9ibG9jayI6MTQ4MjE5NCwibWF4X2Jsb2NrIjoxNDk0MTAwLCJibG9jayI6MTQ5NDEwMCwiYW5jaG9yX2Jsb2NrIjoxNDk0MTAwfQ
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661302193 08/24/2022, 08:49:53          2000      28768      48492
+state_channel_close_v1    1661300960 08/24/2022, 08:29:20          2000      15470      18275
+state_channel_close_v1    1661300460 08/24/2022, 08:21:00            34        282        511
+state_channel_close_v1    1661299840 08/24/2022, 08:10:40          2000      12229      14464
+state_channel_close_v1    1661299640 08/24/2022, 08:07:20           140      12033      22460
+state_channel_close_v1    1661299240 08/24/2022, 08:00:40          2000      14161      18198
+state_channel_close_v1    1661298790 08/24/2022, 07:53:10             4        281        562
+state_channel_close_v1    1661298220 08/24/2022, 07:43:40          2000      16063      22369
+state_channel_close_v1    1661297904 08/24/2022, 07:38:24             9       5296      10612
+state_channel_close_v1    1661297704 08/24/2022, 07:35:04          2000       8321      10799
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkUzaHl5VDJfTE9QUUc4akNqX0xfRnJlczkyVk1DYkhxVzZVMTNPcW1BUUEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM5OTIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661297704 08/24/2022, 07:35:04          2000      22292      32339
+state_channel_close_v1    1661296396 08/24/2022, 07:13:16             0          0          0
+state_channel_close_v1    1661296296 08/24/2022, 07:11:36          2000      46869      55646
+state_channel_close_v1    1661296146 08/24/2022, 07:09:06          2000      37180      51020
+state_channel_close_v1    1661295846 08/24/2022, 07:04:06          2000     125848     192875
+state_channel_close_v1    1661295696 08/24/2022, 07:01:36             4         18         18
+state_channel_close_v1    1661295646 08/24/2022, 07:00:46          2000       5786       9775
+state_channel_close_v1    1661293284 08/24/2022, 06:21:24          2000      34741      46730
+state_channel_close_v1    1661292834 08/24/2022, 06:13:54          2000      51373      73446
+state_channel_close_v1    1661292484 08/24/2022, 06:08:04          2000      17298      20614
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImFiXzU4QWFjbEZPaXpqbl9aUWlDRjVJbWxMNkJnVXUwS3NZS3VwYmR6VHMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM4ODgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661291444 08/24/2022, 05:50:44             4         22         22
+state_channel_close_v1    1661291444 08/24/2022, 05:50:44          2000      10364      16183
+state_channel_close_v1    1661289932 08/24/2022, 05:25:32          2000       4942       7238
+state_channel_close_v1    1661288832 08/24/2022, 05:07:12            18        406        406
+state_channel_close_v1    1661288732 08/24/2022, 05:05:32             1          2          2
+state_channel_close_v1    1661288530 08/24/2022, 05:02:10          2000      14053      21681
+state_channel_close_v1    1661287980 08/24/2022, 04:53:00             3         13         13
+state_channel_close_v1    1661286924 08/24/2022, 04:35:24          2000      29770      48673
+state_channel_close_v1    1661286874 08/24/2022, 04:34:34          2000      19144      25558
+state_channel_close_v1    1661286824 08/24/2022, 04:33:44          2000      26707      36360
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InFMTnlLS19HN3puenM4NzhMdHUwNkVWY1kyejVZZEMtaFExM0FLLXkyZVEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM3NzYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661285574 08/24/2022, 04:12:54          2000      13841      16554
+state_channel_close_v1    1661285162 08/24/2022, 04:06:02          2000      14743      19583
+state_channel_close_v1    1661284712 08/24/2022, 03:58:32             5        252        505
+state_channel_close_v1    1661284062 08/24/2022, 03:47:42             8       5145      10303
+state_channel_close_v1    1661283912 08/24/2022, 03:45:12          2000       6884       8670
+state_channel_close_v1    1661283347 08/24/2022, 03:35:47          2000     114008     174000
+state_channel_close_v1    1661282447 08/24/2022, 03:20:47          2000      43066      52378
+state_channel_close_v1    1661281147 08/24/2022, 02:59:07             2          3          3
+state_channel_close_v1    1661280697 08/24/2022, 02:51:37          2000      12656      14987
+state_channel_close_v1    1661280297 08/24/2022, 02:44:57             8         22         22
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkNEeldEUExWTkxZWEtPc25ITEJ5NEhvdXp1R1JoTlRSSmNqbXRzYzM3eFkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM2NDYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661279546 08/24/2022, 02:32:26          2000      14625      19966
+state_channel_close_v1    1661278996 08/24/2022, 02:23:16             9         98         98
+state_channel_close_v1    1661278268 08/24/2022, 02:11:08            41       4367       4440
+state_channel_close_v1    1661277968 08/24/2022, 02:06:08          2000      39560      55587
+state_channel_close_v1    1661276718 08/24/2022, 01:45:18          2000       9875      13809
+state_channel_close_v1    1661276309 08/24/2022, 01:38:29          2000       5557       8245
+state_channel_close_v1    1661275209 08/24/2022, 01:20:09          2000      41871      61503
+state_channel_close_v1    1661274741 08/24/2022, 01:12:21          2000      15576      25113
+state_channel_close_v1    1661273641 08/24/2022, 00:54:01          2000      40571      56152
+state_channel_close_v1    1661273441 08/24/2022, 00:50:41             1          1          1
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlNLY2tyaGlDZTR4Q3hvbldFSGFwbVNMcWc1azU1d0ppWmdtQXJwX1VjT0UiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM1MTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661273280 08/24/2022, 00:48:00          2000      26824      43546
+state_channel_close_v1    1661272830 08/24/2022, 00:40:30          2000      11284      13780
+state_channel_close_v1    1661272630 08/24/2022, 00:37:10             8         20         20
+state_channel_close_v1    1661272230 08/24/2022, 00:30:30          2000      88090     137012
+state_channel_close_v1    1661271830 08/24/2022, 00:23:50          2000      14810      18175
+state_channel_close_v1    1661271325 08/24/2022, 00:15:25          2000      10612      13790
+state_channel_close_v1    1661271125 08/24/2022, 00:12:05             5        393        787
+state_channel_close_v1    1661270375 08/23/2022, 23:59:35          2000       9056      12662
+state_channel_close_v1    1661270325 08/23/2022, 23:58:45            10       5237      10484
+state_channel_close_v1    1661268632 08/23/2022, 23:30:32          2000      47681      57699
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjJrajF1ZkcyR2tkeUNUQjd4ZjVpaWVtWTVUWGN3X0JUSmFzbVJQNGlLNEEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTM0MTUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661267653 08/23/2022, 23:14:13          2000      19764      24875
+state_channel_close_v1    1661267153 08/23/2022, 23:05:53          2000      31215      42867
+state_channel_close_v1    1661265703 08/23/2022, 22:41:43             2          3          3
+state_channel_close_v1    1661264936 08/23/2022, 22:28:56             6         19         19
+state_channel_close_v1    1661263486 08/23/2022, 22:04:46          2000      97426     151102
+state_channel_close_v1    1661262484 08/23/2022, 21:48:04            27        298        565
+state_channel_close_v1    1661262434 08/23/2022, 21:47:14          2000       8395      13866
+state_channel_close_v1    1661261873 08/23/2022, 21:37:53           122      12675      23678
+state_channel_close_v1    1661260985 08/23/2022, 21:23:05          2000       7801      11133
+state_channel_close_v1    1661260785 08/23/2022, 21:19:45          2000      14497      21001
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ik1sU3lkd2VValJBcF9oNHktZW5JZ0p0MFVBY1NKaU1xRHZXMi1acDVoZWciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTMyNjAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661259451 08/23/2022, 20:57:31          2000      30867      51179
+state_channel_close_v1    1661259451 08/23/2022, 20:57:31          2000      19525      28865
+state_channel_close_v1    1661258901 08/23/2022, 20:48:21          2000      11820      13489
+state_channel_close_v1    1661258751 08/23/2022, 20:45:51           149        347        428
+state_channel_close_v1    1661258651 08/23/2022, 20:44:11             0          0          0
+state_channel_close_v1    1661258149 08/23/2022, 20:35:49          2000      13575      17891
+state_channel_close_v1    1661258049 08/23/2022, 20:34:09             0          0          0
+state_channel_close_v1    1661257999 08/23/2022, 20:33:19           142        318        406
+state_channel_close_v1    1661257949 08/23/2022, 20:32:29          2000      13785      16252
+state_channel_close_v1    1661257449 08/23/2022, 20:24:09          2000      29487      43513
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjVHUjd1NGNuRjZtdEpoeXEzbWZlSlBoSTBnWjk5OTh2bkxoUzdCWEtUWWsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTMxOTQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661257349 08/23/2022, 20:22:29             6         17         17
+state_channel_close_v1    1661257199 08/23/2022, 20:19:59          1894     101773     129035
+state_channel_close_v1    1661257099 08/23/2022, 20:18:19             5        264        529
+state_channel_close_v1    1661256735 08/23/2022, 20:12:15          2000      58010      78889
+state_channel_close_v1    1661256385 08/23/2022, 20:06:25          2000       9498      11950
+state_channel_close_v1    1661256285 08/23/2022, 20:04:45             9       5180      10377
+state_channel_close_v1    1661254849 08/23/2022, 19:40:49          2000      45657      55387
+state_channel_close_v1    1661253999 08/23/2022, 19:26:39          2000      84973     133662
+state_channel_close_v1    1661250474 08/23/2022, 18:27:54          2000      16715      21479
+state_channel_close_v1    1661250324 08/23/2022, 18:25:24             2          4          4
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkFDeFp4dU5qWEpQS3hrTDZLZ295NmxZcjIwcUZoYkhpSXUzTlZGV2s4UTgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTMwNTMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661249574 08/23/2022, 18:12:54             5         13         13
+state_channel_close_v1    1661248671 08/23/2022, 17:57:51          2000       9117      15571
+state_channel_close_v1    1661247182 08/23/2022, 17:33:02          2000       4814       6668
+state_channel_close_v1    1661245932 08/23/2022, 17:12:12          2000      58746      80280
+state_channel_close_v1    1661245726 08/23/2022, 17:08:46          2000      22987      38349
+state_channel_close_v1    1661245376 08/23/2022, 17:02:56          2000      19018      26158
+state_channel_close_v1    1661245276 08/23/2022, 17:01:16          2000      15229      20924
+state_channel_close_v1    1661244526 08/23/2022, 16:48:46          2000      13578      17225
+state_channel_close_v1    1661244190 08/23/2022, 16:43:10          2000      19599      30050
+state_channel_close_v1    1661244040 08/23/2022, 16:40:40          2000      14236      17044
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjJNMkhlb1hfdFlTdE9KRFMyOHRhd2hLaTQ5aExNNFMxUEJyNENHbmVFUEEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTI5MjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661243390 08/23/2022, 16:29:50             6        349        699
+state_channel_close_v1    1661242890 08/23/2022, 16:21:30             1          3          3
+state_channel_close_v1    1661242690 08/23/2022, 16:18:10          2000      10437      14329
+state_channel_close_v1    1661242490 08/23/2022, 16:14:50             9       5311      10640
+state_channel_close_v1    1661241885 08/23/2022, 16:04:45             4         14         14
+state_channel_close_v1    1661241635 08/23/2022, 16:00:35          2000      10381      15784
+state_channel_close_v1    1661241135 08/23/2022, 15:52:15          2000      47183      57536
+state_channel_close_v1    1661240646 08/23/2022, 15:44:06            10         56         60
+state_channel_close_v1    1661240546 08/23/2022, 15:42:26          2000      85042     115701
+state_channel_close_v1    1661240046 08/23/2022, 15:34:06            40       3069       3107
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImxwWnNvczBoNzRmOW5LMEhocWdKMnNlakExZm5TcmY1bnRqc3lNTERJMUUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTI4NTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661239596 08/23/2022, 15:26:36          2000      17437      24523
+state_channel_close_v1    1661238482 08/23/2022, 15:08:02          2000      41982      61263
+state_channel_close_v1    1661238032 08/23/2022, 15:00:32          2000      15645      21124
+state_channel_close_v1    1661234994 08/23/2022, 14:09:54             1          1          1
+state_channel_close_v1    1661234294 08/23/2022, 13:58:14             7         16         16
+state_channel_close_v1    1661233313 08/23/2022, 13:41:53          2000       7306      11956
+state_channel_close_v1    1661232963 08/23/2022, 13:36:03          2000      48472      66307
+state_channel_close_v1    1661232263 08/23/2022, 13:24:23          2000      14058      17441
+state_channel_close_v1    1661231356 08/23/2022, 13:09:16          2000      17902      24309
+state_channel_close_v1    1661230706 08/23/2022, 12:58:26          2000       8032      11549
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlJmb3JzaUhLc0gwWl9pZ2dZY29CNGhiYkIxb0s3MUZFUmh5ZVBjdXVPNmciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTI2NjUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661230503 08/23/2022, 12:55:03          2000      31915      53125
+state_channel_close_v1    1661230299 08/23/2022, 12:51:39          1927      11798      14405
+state_channel_close_v1    1661229290 08/23/2022, 12:34:50             6        346        693
+state_channel_close_v1    1661228425 08/23/2022, 12:20:25             8       5246      10507
+state_channel_close_v1    1661228375 08/23/2022, 12:19:35          2000       8040       9331
+state_channel_close_v1    1661228375 08/23/2022, 12:19:35          2000     111397     152860
+state_channel_close_v1    1661228325 08/23/2022, 12:18:45          2000      20649      28936
+state_channel_close_v1    1661227275 08/23/2022, 12:01:15             2          3          3
+state_channel_close_v1    1661227125 08/23/2022, 11:58:45          2000      42537      52014
+state_channel_close_v1    1661226260 08/23/2022, 11:44:20             5         16         16
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjYxeU1hV2t2Vm9wdjNsRUlweFZlR3VwTzFCREZMNlhTaHhtb0ItRjE5ZnciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTI1ODIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661223982 08/23/2022, 11:06:22          2000      12105      13979
+state_channel_close_v1    1661223932 08/23/2022, 11:05:32            20        108        196
+state_channel_close_v1    1661223632 08/23/2022, 11:00:32          2000      26584      36000
+state_channel_close_v1    1661223432 08/23/2022, 10:57:12           145      11529      21325
+state_channel_close_v1    1661222526 08/23/2022, 10:42:06          2000      19490      26331
+state_channel_close_v1    1661221057 08/23/2022, 10:17:37          2000       9257      12318
+state_channel_close_v1    1661219505 08/23/2022, 09:51:45          2000      20642      26938
+state_channel_close_v1    1661219305 08/23/2022, 09:48:25             0          0          0
+state_channel_close_v1    1661219155 08/23/2022, 09:45:55          2000       7674      12325
+state_channel_close_v1    1661218905 08/23/2022, 09:41:45          2000      13919      17247
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkE2Z2IxV2VPUDZ0dXI3UmhmaVU4eVcxelQwS2ZGeHNHUktpXzlxRXozeG8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTI0MzYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661218655 08/23/2022, 09:37:35             6         19         19
+state_channel_close_v1    1661218255 08/23/2022, 09:30:55          2000      69115      97448
+state_channel_close_v1    1661218255 08/23/2022, 09:30:55          2000      95975     133192
+state_channel_close_v1    1661217840 08/23/2022, 09:24:00          2000       6983      11484
+state_channel_close_v1    1661217090 08/23/2022, 09:11:30             0          0          0
+state_channel_close_v1    1661216258 08/23/2022, 08:57:38          2000      13509      16270
+state_channel_close_v1    1661216208 08/23/2022, 08:56:48          2000      12276      17772
+state_channel_close_v1    1661215358 08/23/2022, 08:42:38             5        294        589
+state_channel_close_v1    1661214958 08/23/2022, 08:35:58          2000      29556      50021
+state_channel_close_v1    1661214858 08/23/2022, 08:34:18          2000      13130      16651
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImFTbk9sb055U2dUUVYzWldSaHRHME1kelRBRlFpVlNQSHdIOVVieEIyTkUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTIzNTYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661214752 08/23/2022, 08:32:32             9       5317      10652
+state_channel_close_v1    1661214652 08/23/2022, 08:30:52          2000       7455      10878
+state_channel_close_v1    1661213142 08/23/2022, 08:05:42          2000      22363      29714
+state_channel_close_v1    1661213142 08/23/2022, 08:05:42          2000      44177      53723
+state_channel_close_v1    1661211621 08/23/2022, 07:40:21             2          4          4
+state_channel_close_v1    1661210818 08/23/2022, 07:26:58             9         24         24
+state_channel_close_v1    1661209362 08/23/2022, 07:02:42          2000      10297      12841
+state_channel_close_v1    1661208912 08/23/2022, 06:55:12          2000     104178     143725
+state_channel_close_v1    1661208462 08/23/2022, 06:47:42             5         14         14
+state_channel_close_v1    1661208096 08/23/2022, 06:41:36            25        106        184
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlRmbjhNU0xQWExQRkdZOHRhYjhYVUdzS2Rja1hOM20xQmNLVGRfRzZhcDgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTIyMjQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661207646 08/23/2022, 06:34:06          2000      13122      16232
+state_channel_close_v1    1661207446 08/23/2022, 06:30:46           697      24104      32539
+state_channel_close_v1    1661206896 08/23/2022, 06:21:36          2000       9422      14721
+state_channel_close_v1    1661205196 08/23/2022, 05:53:16          2000      13081      15366
+state_channel_close_v1    1661205146 08/23/2022, 05:52:26            25        386        386
+state_channel_close_v1    1661204740 08/23/2022, 05:45:40          2000      25230      32701
+state_channel_close_v1    1661203890 08/23/2022, 05:31:30             1          1          1
+state_channel_close_v1    1661203790 08/23/2022, 05:29:50          2000       6375       8963
+state_channel_close_v1    1661203590 08/23/2022, 05:26:30          2000      13502      18392
+state_channel_close_v1    1661203064 08/23/2022, 05:17:44             5         17         17
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImdxWDVJY2lpeWNJNlUycW5qNFpHeTBKRGJrY3g0cjVYQllKT09yb2hXMmMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTIxMjQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661202714 08/23/2022, 05:11:54          2000      15171      17840
+state_channel_close_v1    1661202514 08/23/2022, 05:08:34          2000      15511      27447
+state_channel_close_v1    1661202364 08/23/2022, 05:06:04            10         67         67
+state_channel_close_v1    1661201554 08/23/2022, 04:52:34            40       2312       2354
+state_channel_close_v1    1661201404 08/23/2022, 04:50:04             5        297        595
+state_channel_close_v1    1661200854 08/23/2022, 04:40:54          2000      25532      37037
+state_channel_close_v1    1661200854 08/23/2022, 04:40:54          2000      57004      84061
+state_channel_close_v1    1661200754 08/23/2022, 04:39:14          2000       7580       9123
+state_channel_close_v1    1661200654 08/23/2022, 04:37:34             9       5257      10526
+state_channel_close_v1    1661200154 08/23/2022, 04:29:14          2000      16474      20872
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImZpNkRZdnhDTGZFdlFXeE9NejlKVGtkNm56c1RfMDVwM1ZlYS1Pd040MFkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTIwNjcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661199253 08/23/2022, 04:14:13          2000      41478      50757
+state_channel_close_v1    1661199253 08/23/2022, 04:14:13          2000     110214     147257
+state_channel_close_v1    1661198753 08/23/2022, 04:05:53          2000      14633      18224
+state_channel_close_v1    1661196503 08/23/2022, 03:28:23             2          2          2
+state_channel_close_v1    1661195403 08/23/2022, 03:10:03             3         12         12
+state_channel_close_v1    1661194467 08/23/2022, 02:54:27          2000      23046      29788
+state_channel_close_v1    1661193567 08/23/2022, 02:39:27          2000      15238      18319
+state_channel_close_v1    1661190343 08/23/2022, 01:45:43          2000     117538     147930
+state_channel_close_v1    1661189983 08/23/2022, 01:39:43          2000      11799      19464
+state_channel_close_v1    1661189624 08/23/2022, 01:33:44          2000      23782      36690
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlY1WnBsaXo1bXRfRkUwWHd1NjJlU0tIclN2dzhtSkxtRFZJMC1FeTBZS3ciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTE4NTgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661188706 08/23/2022, 01:18:26          2000      14209      17245
+state_channel_close_v1    1661188656 08/23/2022, 01:17:36             2          2          2
+state_channel_close_v1    1661188185 08/23/2022, 01:09:45          2000      16010      23256
+state_channel_close_v1    1661187685 08/23/2022, 01:01:25             3         14         14
+state_channel_close_v1    1661187585 08/23/2022, 00:59:45             5        240        480
+state_channel_close_v1    1661187435 08/23/2022, 00:57:15          2000       4750       6809
+state_channel_close_v1    1661187085 08/23/2022, 00:51:25          2000      12835      16637
+state_channel_close_v1    1661187085 08/23/2022, 00:51:25            37        492        920
+state_channel_close_v1    1661186985 08/23/2022, 00:49:45          2000       8656      12490
+state_channel_close_v1    1661186985 08/23/2022, 00:49:45             9       5294      10604
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ik5Cb0JjZzRzOTl2cGFKVFh4VHQyRVpSYkI1cF9kaW5SazVuT3VGZHUwOG8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTE4MDYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661186835 08/23/2022, 00:47:15          2000      41477      87539
+state_channel_close_v1    1661185720 08/23/2022, 00:28:40          2000      37219      60563
+state_channel_close_v1    1661185570 08/23/2022, 00:26:10          2000      15462      20919
+state_channel_close_v1    1661185520 08/23/2022, 00:25:20          2000      44456      55130
+state_channel_close_v1    1661185470 08/23/2022, 00:24:30           163      12154      22363
+state_channel_close_v1    1661185070 08/23/2022, 00:17:50          2000      20408      26668
+state_channel_close_v1    1661181523 08/22/2022, 23:18:43          2000      59912      75212
+state_channel_close_v1    1661180623 08/22/2022, 23:03:43             2          3          3
+state_channel_close_v1    1661180123 08/22/2022, 22:55:23          2000      37169      52328
+state_channel_close_v1    1661179973 08/22/2022, 22:52:53             4         16         16
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Il9EekhsY2JwTm5KY1NyMjl5VmZzMVpCSy00LW90Ujk2MURYZ3hJT1VMT1kiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTE2NjcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661179714 08/22/2022, 22:48:34          2000      13752      16533
+state_channel_close_v1    1661179264 08/22/2022, 22:41:04             0          0          0
+state_channel_close_v1    1661178414 08/22/2022, 22:26:54             0          0          0
+state_channel_close_v1    1661177757 08/22/2022, 22:15:57             0          0          0
+state_channel_close_v1    1661176602 08/22/2022, 21:56:42          2000      15226      19230
+state_channel_close_v1    1661175850 08/22/2022, 21:44:10          2000     118311     147630
+state_channel_close_v1    1661175150 08/22/2022, 21:32:30            22       1706       1706
+state_channel_close_v1    1661174739 08/22/2022, 21:25:39          2000      12264      14551
+state_channel_close_v1    1661173889 08/22/2022, 21:11:29             4        260        520
+state_channel_close_v1    1661173372 08/22/2022, 21:02:52          2000       5900       9095
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InhScnp6SUFVVmZsWFJhenh2QWJsWWs5RkFMN0FuNjRKVDNPdEkxVXl5ZjgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTE1MzYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661173218 08/22/2022, 21:00:18          2000      12546      14457
+state_channel_close_v1    1661173168 08/22/2022, 20:59:28          2000       8375      12435
+state_channel_close_v1    1661173168 08/22/2022, 20:59:28             9       5345      10701
+state_channel_close_v1    1661172768 08/22/2022, 20:52:48             0          0          0
+state_channel_close_v1    1661172318 08/22/2022, 20:45:18             3         14         14
+state_channel_close_v1    1661171968 08/22/2022, 20:39:28          2000      37768      48371
+state_channel_close_v1    1661171918 08/22/2022, 20:38:38          2000      33324      54608
+state_channel_close_v1    1661171196 08/22/2022, 20:26:36          2000      42784      58002
+state_channel_close_v1    1661170546 08/22/2022, 20:15:46          2000       5444       7850
+state_channel_close_v1    1661167308 08/22/2022, 19:21:48          2000       8163      10315
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjJIejJ2dm03TXpJd3pUR1NvWXRkS3pmOTdIc2YtV21UTjZfWUJFb3BPNm8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTE0MTYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661167058 08/22/2022, 19:17:38          2000       9187      13269
+state_channel_close_v1    1661166158 08/22/2022, 19:02:38          2000      46481      66592
+state_channel_close_v1    1661165555 08/22/2022, 18:52:35          2000      87878      98983
+state_channel_close_v1    1661165155 08/22/2022, 18:45:55             1          2          2
+state_channel_close_v1    1661164955 08/22/2022, 18:42:35            31      18446      18446
+state_channel_close_v1    1661164444 08/22/2022, 18:34:04             3          5          5
+state_channel_close_v1    1661164190 08/22/2022, 18:29:50             3         13         13
+state_channel_close_v1    1661163690 08/22/2022, 18:21:30            41       1799       1837
+state_channel_close_v1    1661162524 08/22/2022, 18:02:04          2000      52694      69796
+state_channel_close_v1    1661161074 08/22/2022, 17:37:54          2000      23939      30280
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ik1OU292X2I2NmZLNmtSelFfQUE5Yno1RDJNbDJKRk1uUjZGeWFXd21hM28iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTEyOTUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661160862 08/22/2022, 17:34:22          2000      12820      15470
+state_channel_close_v1    1661160407 08/22/2022, 17:26:47          2000       7332      11079
+state_channel_close_v1    1661159857 08/22/2022, 17:17:37             6        261        523
+state_channel_close_v1    1661159257 08/22/2022, 17:07:37             8       5347      10703
+state_channel_close_v1    1661159107 08/22/2022, 17:05:07          2000       6589      10020
+state_channel_close_v1    1661159007 08/22/2022, 17:03:27          2000       7864      11903
+state_channel_close_v1    1661158310 08/22/2022, 16:51:50          2000      56724      82051
+state_channel_close_v1    1661157760 08/22/2022, 16:42:40          2000      42336      53314
+state_channel_close_v1    1661157560 08/22/2022, 16:39:20          2000       8731      12129
+state_channel_close_v1    1661157260 08/22/2022, 16:34:20             0          0          0
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjBMaTBIZGRMUnpWUjZBWTFUdGI2VlZDdFZZTU1IaWktdXJnNDdJYTlOQkEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTEyMjAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661156438 08/22/2022, 16:20:38             5         14         14
+state_channel_close_v1    1661156338 08/22/2022, 16:18:58          2000      36228      59686
+state_channel_close_v1    1661153859 08/22/2022, 15:37:39          2000      47123      51707
+state_channel_close_v1    1661152949 08/22/2022, 15:22:29          2000      48438      64655
+state_channel_close_v1    1661151062 08/22/2022, 14:51:02          2000      35470      72331
+state_channel_close_v1    1661149101 08/22/2022, 14:18:21             1          2          2
+state_channel_close_v1    1661148589 08/22/2022, 14:09:49             4         14         14
+state_channel_close_v1    1661147989 08/22/2022, 13:59:49          2000      58099      75763
+state_channel_close_v1    1661147889 08/22/2022, 13:58:09            24        132        254
+state_channel_close_v1    1661147589 08/22/2022, 13:53:09           120      11357      21121
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImdGQTMzd0R3dXlPR1NjaFQxTWhQU0NYMkJOcTRBQmlOcnpZQ3ZWa1JyM1UiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTEwMjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661147289 08/22/2022, 13:48:09          2000       9454      11998
+state_channel_close_v1    1661146936 08/22/2022, 13:42:16          2000      12304      14995
+state_channel_close_v1    1661146036 08/22/2022, 13:27:16          2000      15969      51399
+state_channel_close_v1    1661145936 08/22/2022, 13:25:36             6        310        621
+state_channel_close_v1    1661145336 08/22/2022, 13:15:36             9       5311      10633
+state_channel_close_v1    1661145286 08/22/2022, 13:14:46          2000      50902      71880
+state_channel_close_v1    1661145076 08/22/2022, 13:11:16          2000       7076       8796
+state_channel_close_v1    1661144176 08/22/2022, 12:56:16          2000       5889       8870
+state_channel_close_v1    1661143572 08/22/2022, 12:46:12          2000      12512      20352
+state_channel_close_v1    1661143572 08/22/2022, 12:46:12          2000      37335      46338
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImZ6cUQ0aUZ1bkRlMFRhQ1BRZ2dPTVp6RW5fVDlFbFo5aXQ4YUc1SUVZRDAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTA5NTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661143572 08/22/2022, 12:46:12          2000      49028      69738
+state_channel_close_v1    1661143318 08/22/2022, 12:41:58          2000     135032     173445
+state_channel_close_v1    1661142218 08/22/2022, 12:23:38          2000      31726      50346
+state_channel_close_v1    1661140698 08/22/2022, 11:58:18             0          0          0
+state_channel_close_v1    1661140498 08/22/2022, 11:54:58             3         19         19
+state_channel_close_v1    1661139533 08/22/2022, 11:38:53          2000      18590      24789
+state_channel_close_v1    1661139133 08/22/2022, 11:32:13             0          0          0
+state_channel_close_v1    1661138483 08/22/2022, 11:21:23             0          0          0
+state_channel_close_v1    1661138483 08/22/2022, 11:21:23             0          0          0
+state_channel_close_v1    1661133582 08/22/2022, 09:59:42          2000      39014      52507
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ikh5eG05c2V4ckJsTlZpOU1GelozUW5IcmVXTFpZZDJldTNzcjFyWU9mSjQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTA3NTMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661133582 08/22/2022, 09:59:42          2000      13682      17456
+state_channel_close_v1    1661132772 08/22/2022, 09:46:12             1          3          3
+state_channel_close_v1    1661132522 08/22/2022, 09:42:02            69       1420       1999
+state_channel_close_v1    1661132072 08/22/2022, 09:34:32             4        160        320
+state_channel_close_v1    1661132022 08/22/2022, 09:33:42             3         13         13
+state_channel_close_v1    1661131872 08/22/2022, 09:31:12          2000      84575     103939
+state_channel_close_v1    1661131872 08/22/2022, 09:31:12          2000      34869      48670
+state_channel_close_v1    1661131522 08/22/2022, 09:25:22             7       5390      10804
+state_channel_close_v1    1661131164 08/22/2022, 09:19:24          2000       8047      10795
+state_channel_close_v1    1661131014 08/22/2022, 09:16:54          2000       7589      12123
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InprWU5RV19kN2taT0UyQ2M0aU1QNm9INXF5azFWN1ZJa0gzY2dfWVNVWlkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTA3MDMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661130764 08/22/2022, 09:12:44          2000      22118      30956
+state_channel_close_v1    1661129864 08/22/2022, 08:57:44          2000      41111      51986
+state_channel_close_v1    1661129655 08/22/2022, 08:54:15          2000       7079       9866
+state_channel_close_v1    1661129001 08/22/2022, 08:43:21            77       1139       2000
+state_channel_close_v1    1661129001 08/22/2022, 08:43:21            67       1418       2000
+state_channel_close_v1    1661128901 08/22/2022, 08:41:41            68       1416       2000
+state_channel_close_v1    1661128901 08/22/2022, 08:41:41            75       1398       2000
+state_channel_close_v1    1661128451 08/22/2022, 08:34:11            66       1425       2000
+state_channel_close_v1    1661128301 08/22/2022, 08:31:41          2000      37863      62324
+state_channel_close_v1    1661127716 08/22/2022, 08:21:56            74       1401       1999
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InFLTEozSHdpa3YwUHBvVW9aVGxZTkhONzUzcFhfRGxsZUVyZ2FmdG81cDQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTA2MzgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661126466 08/22/2022, 08:01:06            14         54         54
+state_channel_close_v1    1661126416 08/22/2022, 08:00:16          2000      12919      44387
+state_channel_close_v1    1661125830 08/22/2022, 07:50:30          2000      16371      19379
+state_channel_close_v1    1661125230 08/22/2022, 07:40:30            40       1868       1909
+state_channel_close_v1    1661125130 08/22/2022, 07:38:50          2000      51205      72218
+state_channel_close_v1    1661125030 08/22/2022, 07:37:10             2          2          2
+state_channel_close_v1    1661124466 08/22/2022, 07:27:46             6         16         16
+state_channel_close_v1    1661124116 08/22/2022, 07:21:56             3         15         15
+state_channel_close_v1    1661124066 08/22/2022, 07:21:06          2000      17922      21736
+state_channel_close_v1    1661120944 08/22/2022, 06:29:04            19        394        395
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InZHUXB2OXJZOEdLVTF0cUdQQlRjbWpXQm9QZXU3Z05PdVdHaGxaMHJmbWsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTA1MDUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661118878 08/22/2022, 05:54:38          2000      11742      13944
+state_channel_close_v1    1661118278 08/22/2022, 05:44:38             5        360        721
+state_channel_close_v1    1661117360 08/22/2022, 05:29:20          2000       6953       8716
+state_channel_close_v1    1661117310 08/22/2022, 05:28:30             8       5270      10551
+state_channel_close_v1    1661117110 08/22/2022, 05:25:10             1          2          2
+state_channel_close_v1    1661116310 08/22/2022, 05:11:50             2         12         12
+state_channel_close_v1    1661116210 08/22/2022, 05:10:10          2000      39959      48539
+state_channel_close_v1    1661115642 08/22/2022, 05:00:42          2000       5817       8460
+state_channel_close_v1    1661115642 08/22/2022, 05:00:42          1783       4310       6142
+state_channel_close_v1    1661114200 08/22/2022, 04:36:40          2000      20737      33966
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlhHenhGS3luSEpnNE9VSVA0LXNLUkxIaVdoek5Db01GTlJ1MjZtT3V4MGsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTAzNzIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661113500 08/22/2022, 04:25:00          2000      32677      45900
+state_channel_close_v1    1661112645 08/22/2022, 04:10:45          2000      23999      37823
+state_channel_close_v1    1661112595 08/22/2022, 04:09:55          2000      18238      25759
+state_channel_close_v1    1661109875 08/22/2022, 03:24:35            27        312        591
+state_channel_close_v1    1661109475 08/22/2022, 03:17:55             2          2          2
+state_channel_close_v1    1661109060 08/22/2022, 03:11:00          2000      33676      43288
+state_channel_close_v1    1661109060 08/22/2022, 03:11:00          2000      41478      52634
+state_channel_close_v1    1661108860 08/22/2022, 03:07:40           271      12372      22392
+state_channel_close_v1    1661108610 08/22/2022, 03:03:30             2         14         14
+state_channel_close_v1    1661108010 08/22/2022, 02:53:30          2000       8473      11809
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ijc3ZlMxb3k2emlZcWYwTFNEYjMwTGVZYVJoNllpU0I2SkRvcFdJT0dSOVEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTAyNDksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661106790 08/22/2022, 02:33:10          2000      49068      70787
+state_channel_close_v1    1661105871 08/22/2022, 02:17:51          2000      24155      28267
+state_channel_close_v1    1661105271 08/22/2022, 02:07:51          2000      24546      33219
+state_channel_close_v1    1661105021 08/22/2022, 02:03:41          2000      11225      14094
+state_channel_close_v1    1661104168 08/22/2022, 01:49:28             6        271        543
+state_channel_close_v1    1661103668 08/22/2022, 01:41:08            10       5283      10579
+state_channel_close_v1    1661103518 08/22/2022, 01:38:38          2000       6994       9920
+state_channel_close_v1    1661101986 08/22/2022, 01:13:06          2000      39454      49513
+state_channel_close_v1    1661101936 08/22/2022, 01:12:16          2000       7375      11854
+state_channel_close_v1    1661101586 08/22/2022, 01:06:26             0          0          0
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InZjTXlHdGptVHNxa0JUQjhnRnZnU05NUS1DRk1CRUd0MTlOS3F5SFU5SjAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0OTAxMjMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661101236 08/22/2022, 01:00:36             3         15         15
+state_channel_close_v1    1661100270 08/22/2022, 00:44:30          2000      13357      20995
+state_channel_close_v1    1661100070 08/22/2022, 00:41:10          2000      14105      16929
+state_channel_close_v1    1661099920 08/22/2022, 00:38:40             0          0          0
+state_channel_close_v1    1661099920 08/22/2022, 00:38:40             0          0          0
+state_channel_close_v1    1661098762 08/22/2022, 00:19:22          2000      27829      45505
+state_channel_close_v1    1661095234 08/21/2022, 23:20:34          2000      20597      24258
+state_channel_close_v1    1661094769 08/21/2022, 23:12:49          2000      28091      40740
+state_channel_close_v1    1661094169 08/21/2022, 23:02:49             2          3          3
+state_channel_close_v1    1661093054 08/21/2022, 22:44:14             2         15         15
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlBWQmxkTDNGbElNSk43U0k4c3JTcm10Tm5wN240Q1VFTUwzWlR5T2xlTzAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODk5NTUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661091345 08/21/2022, 22:15:45          1926      11632      14117
+state_channel_close_v1    1661090345 08/21/2022, 21:59:05             4        239        478
+state_channel_close_v1    1661090245 08/21/2022, 21:57:25          2000      70706     102260
+state_channel_close_v1    1661089727 08/21/2022, 21:48:47            10       5380      10772
+state_channel_close_v1    1661089627 08/21/2022, 21:47:07          2000      11614      16536
+state_channel_close_v1    1661089477 08/21/2022, 21:44:37          2000       7072       8517
+state_channel_close_v1    1661088203 08/21/2022, 21:23:23          2000      49037      58748
+state_channel_close_v1    1661088053 08/21/2022, 21:20:53            11         47         47
+state_channel_close_v1    1661088003 08/21/2022, 21:20:03          2000       8204      13308
+state_channel_close_v1    1661088003 08/21/2022, 21:20:03          2000      48123      70487
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ikhhcll6MjFaMzNmVGdsdEFlQzMybHl3QllHQ1hqbk85cjRST0xydTByWjAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODk4NTUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661087353 08/21/2022, 21:09:13            43       1555       1592
+state_channel_close_v1    1661086602 08/21/2022, 20:56:42          2000      10616      15185
+state_channel_close_v1    1661086102 08/21/2022, 20:48:22             1          1          1
+state_channel_close_v1    1661085402 08/21/2022, 20:36:42             3         13         13
+state_channel_close_v1    1661085023 08/21/2022, 20:30:23          2000      30892      51678
+state_channel_close_v1    1661084823 08/21/2022, 20:27:03          2000      16117      19381
+state_channel_close_v1    1661080163 08/21/2022, 19:09:23             2          4          4
+state_channel_close_v1    1661079452 08/21/2022, 18:57:32          2000      59830      86062
+state_channel_close_v1    1661078277 08/21/2022, 18:37:57             2          3          3
+state_channel_close_v1    1661077727 08/21/2022, 18:28:47          2000      15064      21877
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlhFaE5McVQ5WWZ4WjE1clZNZDYxZi1xdUhUQkdhdG9fY0JuZ0tWWlBOdEEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODk2NTIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661077577 08/21/2022, 18:26:17             3         15         15
+state_channel_close_v1    1661077427 08/21/2022, 18:23:47          2000       7040       8257
+state_channel_close_v1    1661076368 08/21/2022, 18:06:08          2000      23312      34561
+state_channel_close_v1    1661076318 08/21/2022, 18:05:18             5        253        507
+state_channel_close_v1    1661075718 08/21/2022, 17:55:18          2000      46245      57978
+state_channel_close_v1    1661075668 08/21/2022, 17:54:28             9       5475      10962
+state_channel_close_v1    1661074185 08/21/2022, 17:29:45          2000       6958       9680
+state_channel_close_v1    1661072654 08/21/2022, 17:04:14          2000      13847      25108
+state_channel_close_v1    1661071604 08/21/2022, 16:46:44          2000      44021      71603
+state_channel_close_v1    1661071285 08/21/2022, 16:41:25          2000      26349      39611
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjNOUVlqQjBOcjgxQ3ktRFdnQjdaSzMtVFUzRTVqVTAySU94TXlJWG9ucjAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODk1MjcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661070985 08/21/2022, 16:36:25            19        147        275
+state_channel_close_v1    1661070485 08/21/2022, 16:28:05           116      11077      20493
+state_channel_close_v1    1661070185 08/21/2022, 16:23:05          2000      47476      69082
+state_channel_close_v1    1661070135 08/21/2022, 16:22:15             0          0          0
+state_channel_close_v1    1661069822 08/21/2022, 16:17:02             2         16         16
+state_channel_close_v1    1661069460 08/21/2022, 16:11:00          2000       7583      12773
+state_channel_close_v1    1661065553 08/21/2022, 15:05:53          2000      14761      20587
+state_channel_close_v1    1661065053 08/21/2022, 14:57:33          1706       7857       9411
+state_channel_close_v1    1661063662 08/21/2022, 14:34:22          2000      17505      20566
+state_channel_close_v1    1661062712 08/21/2022, 14:18:32             0          0          0
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlJnLVlFdXdDMDgzU25GOVBvTl9HWW9VYUdNN0lvZS1pN0t3R3VtWE5WSzQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODkzNTgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661062512 08/21/2022, 14:15:12             0          0          0
+state_channel_close_v1    1661062103 08/21/2022, 14:08:23             5        129        258
+state_channel_close_v1    1661061703 08/21/2022, 14:01:43             7       5325      10665
+state_channel_close_v1    1661061703 08/21/2022, 14:01:43             2         14         14
+state_channel_close_v1    1661061703 08/21/2022, 14:01:43          2000       6139       7379
+state_channel_close_v1    1661061453 08/21/2022, 13:57:33             0          0          0
+state_channel_close_v1    1661060536 08/21/2022, 13:42:16          2000       8330      13802
+state_channel_close_v1    1661060075 08/21/2022, 13:34:35          2000      44711      53153
+state_channel_close_v1    1661059475 08/21/2022, 13:24:35          2000      20543      24386
+state_channel_close_v1    1661059275 08/21/2022, 13:21:15          2000      39672      58021
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Inh6eHZCcWlia1BCUWFCYUp4RG9mMW41aUZDckx2S2dGY3ExWHJqRkhMMTAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODkyOTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661058975 08/21/2022, 13:16:15          2000       9920      14378
+state_channel_close_v1    1661057307 08/21/2022, 12:48:27          2000      29842      49759
+state_channel_close_v1    1661054878 08/21/2022, 12:07:58             1          2          2
+state_channel_close_v1    1661054678 08/21/2022, 12:04:38            39        200        260
+state_channel_close_v1    1661054328 08/21/2022, 11:58:48          2000      65122      82872
+state_channel_close_v1    1661054028 08/21/2022, 11:53:48             5         16         16
+state_channel_close_v1    1661053678 08/21/2022, 11:47:58           556      26934      35917
+state_channel_close_v1    1661052818 08/21/2022, 11:33:38          2000       4768       7705
+state_channel_close_v1    1661051510 08/21/2022, 11:11:50          2000      50679      69933
+state_channel_close_v1    1661050460 08/21/2022, 10:54:20          2000      23817      29719
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkZLTXNMeW90TldaM0FTR01KLVg4VXk0SWxpU2FMZFJYdjliWU92SUl5Y0EiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODkxMTUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661050410 08/21/2022, 10:53:30          2000      10279      11875
+state_channel_close_v1    1661049739 08/21/2022, 10:42:19            10         26         28
+state_channel_close_v1    1661049539 08/21/2022, 10:38:59          2000      16325      19254
+state_channel_close_v1    1661049039 08/21/2022, 10:30:39            40       2284       2320
+state_channel_close_v1    1661048489 08/21/2022, 10:21:29             6        364        730
+state_channel_close_v1    1661047782 08/21/2022, 10:09:42          2000       7894      10745
+state_channel_close_v1    1661047532 08/21/2022, 10:05:32             8       5293      10598
+state_channel_close_v1    1661046982 08/21/2022, 09:56:22             1          2          2
+state_channel_close_v1    1661046932 08/21/2022, 09:55:32          2000       8467      13122
+state_channel_close_v1    1661046263 08/21/2022, 09:44:23          2000      49580      60939
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InBQZTg4aTMyME5TWDhSS1F6bWpSWjF6ZFQ4a2lJWENvdWRZb0w5ZnFMY1UiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODkwMzIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661046163 08/21/2022, 09:42:43             6         18         18
+state_channel_close_v1    1661045163 08/21/2022, 09:26:03          2000       6207      10198
+state_channel_close_v1    1661043903 08/21/2022, 09:05:03          2000      31918      35947
+state_channel_close_v1    1661043653 08/21/2022, 09:00:53          2000      16202      24042
+state_channel_close_v1    1661042035 08/21/2022, 08:33:55          2000      27825      47872
+state_channel_close_v1    1661041735 08/21/2022, 08:28:55          2000      21521      29112
+state_channel_close_v1    1661041172 08/21/2022, 08:19:32          2000      39949      58151
+state_channel_close_v1    1661041072 08/21/2022, 08:17:52             7         24         24
+state_channel_close_v1    1661039175 08/21/2022, 07:46:15             0          0          0
+state_channel_close_v1    1661038625 08/21/2022, 07:37:05             5         21         21
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImRDb0JMQkhRN0U3ZjRfSTN4Vk8wQzFRZ3VLMnhLUG1ReG53VDlDc3dVSmsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODg4ODEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661036967 08/21/2022, 07:09:27            18        467        467
+state_channel_close_v1    1661036131 08/21/2022, 06:55:31          2000       7451       9055
+state_channel_close_v1    1661035681 08/21/2022, 06:48:01          2000      26514      37768
+state_channel_close_v1    1661035131 08/21/2022, 06:38:51          2000      27660      30604
+state_channel_close_v1    1661034831 08/21/2022, 06:33:51          2000      11284      15716
+state_channel_close_v1    1661034781 08/21/2022, 06:33:01            13       1399       1399
+state_channel_close_v1    1661034381 08/21/2022, 06:26:21             5        272        545
+state_channel_close_v1    1661033970 08/21/2022, 06:19:30          2000      39529      47634
+state_channel_close_v1    1661033720 08/21/2022, 06:15:20             9       5147      10308
+state_channel_close_v1    1661033070 08/21/2022, 06:04:30            28        243        444
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InEyZ3hfZzdaWTFtU2U2SUtUSkxBY2VRXzNfM2YxeEozbjlsR0dtNjFtM2ciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODg3NzEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661032820 08/21/2022, 06:00:20          2000      43967      61735
+state_channel_close_v1    1661032207 08/21/2022, 05:50:07           162      11237      20702
+state_channel_close_v1    1661031407 08/21/2022, 05:36:47          2000      11263      16514
+state_channel_close_v1    1661031307 08/21/2022, 05:35:07          2000       5922       8422
+state_channel_close_v1    1661031207 08/21/2022, 05:33:27             0          0          0
+state_channel_close_v1    1661030591 08/21/2022, 05:23:11             4         15         15
+state_channel_close_v1    1661029841 08/21/2022, 05:10:41          2000      14100      25055
+state_channel_close_v1    1661028729 08/21/2022, 04:52:09          2000      13688      18210
+state_channel_close_v1    1661028279 08/21/2022, 04:44:39          2000      24813      38104
+state_channel_close_v1    1661026068 08/21/2022, 04:07:48          2000      29580      41206
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjM5U3cwUzJGaGFnemFHWW1xR0VtMVFneUpwTG9YZDBWTEZKVm8tZFpLYnciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODg2MzIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661024626 08/21/2022, 03:43:46            24      17896      17896
+state_channel_close_v1    1661024626 08/21/2022, 03:43:46             0          0          0
+state_channel_close_v1    1661023816 08/21/2022, 03:30:16          2000      53930      74868
+state_channel_close_v1    1661023605 08/21/2022, 03:26:45             0          0          0
+state_channel_close_v1    1661023405 08/21/2022, 03:23:25             4         19         19
+state_channel_close_v1    1661023405 08/21/2022, 03:23:25          1332       3728       4789
+state_channel_close_v1    1661022505 08/21/2022, 03:08:25             0          0          0
+state_channel_close_v1    1661022355 08/21/2022, 03:05:55          2000      15650      19445
+state_channel_close_v1    1661021097 08/21/2022, 02:44:57          2000      10588      17440
+state_channel_close_v1    1661020847 08/21/2022, 02:40:47             5        492        985
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImFiUHU1T1Z6a01vbXEzRTNGQ28zUkszYmtwM2xyT0lwcXNUT2NIV1FKVUkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODg1MjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661020697 08/21/2022, 02:38:17          2000      20849      26524
+state_channel_close_v1    1661020016 08/21/2022, 02:26:56          2000       6691       7833
+state_channel_close_v1    1661019666 08/21/2022, 02:21:06            11       5267      10546
+state_channel_close_v1    1661018279 08/21/2022, 01:57:59          2000      36143      48192
+state_channel_close_v1    1661017579 08/21/2022, 01:46:19          2000      11361      18550
+state_channel_close_v1    1661016555 08/21/2022, 01:29:15          2000      27326      34620
+state_channel_close_v1    1661015805 08/21/2022, 01:16:45          2000       5038       7128
+state_channel_close_v1    1661014577 08/21/2022, 00:56:17             0          0          0
+state_channel_close_v1    1661014527 08/21/2022, 00:55:27             5         17         17
+state_channel_close_v1    1661014227 08/21/2022, 00:50:27          2000      23555      39704
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImVNM2YyZnFfMUphcnZlOS10dldjWWYyNF84dlVUT2JhX1RDVE44NHM0NW8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODg0MDQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661014127 08/21/2022, 00:48:47          2000      85196      94768
+state_channel_close_v1    1661013062 08/21/2022, 00:31:02          2000      20822      28913
+state_channel_close_v1    1661012712 08/21/2022, 00:25:12          2000      38391      57314
+state_channel_close_v1    1661012712 08/21/2022, 00:25:12          2000      19478      29872
+state_channel_close_v1    1661011230 08/21/2022, 00:00:30             9         22         22
+state_channel_close_v1    1661010630 08/20/2022, 23:50:30            38       1098       1140
+state_channel_close_v1    1661009426 08/20/2022, 23:30:26          2000      12363      14848
+state_channel_close_v1    1661007869 08/20/2022, 23:04:29             3          3          3
+state_channel_close_v1    1661007669 08/20/2022, 23:01:09          2000      13199      15848
+state_channel_close_v1    1661007369 08/20/2022, 22:56:09          2000      14790      20634
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InJubnk0RDNzUEt3eWwzSGtFY1NwWnBwcXF0aGliUFlZVHNkYUxob1FuQ2siLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODgyNzAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661006819 08/20/2022, 22:46:59             4         15         15
+state_channel_close_v1    1661006517 08/20/2022, 22:41:57             5        330        661
+state_channel_close_v1    1661005745 08/20/2022, 22:29:05          2000       7949       9939
+state_channel_close_v1    1661005695 08/20/2022, 22:28:15            11       9062      18136
+state_channel_close_v1    1661004955 08/20/2022, 22:15:55          2000      17575      24072
+state_channel_close_v1    1661004955 08/20/2022, 22:15:55          2000      87352      95527
+state_channel_close_v1    1661004205 08/20/2022, 22:03:25          2000      38945      47008
+state_channel_close_v1    1661002643 08/20/2022, 21:37:23           182        573        748
+state_channel_close_v1    1661002243 08/20/2022, 21:30:43          2000       8223      13825
+state_channel_close_v1    1661001561 08/20/2022, 21:19:21          2000      21619      32176
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkFsbmpkek9rbVJ5UU1MZ1B2MlJQUDhEbWVLRDdkLVJrS0ZkZ3RNLXdKMXciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODgxNTYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1661001511 08/20/2022, 21:18:31          2000      94823     121245
+state_channel_close_v1    1661000561 08/20/2022, 21:02:41             2          2          2
+state_channel_close_v1    1661000361 08/20/2022, 20:59:21          2000       9252      13237
+state_channel_close_v1    1660999599 08/20/2022, 20:46:39             4         16         16
+state_channel_close_v1    1660998899 08/20/2022, 20:34:59          2000      28447      47760
+state_channel_close_v1    1660997830 08/20/2022, 20:17:10          2000      32092      56076
+state_channel_close_v1    1660996680 08/20/2022, 19:58:00          2000      26828      35457
+state_channel_close_v1    1660995821 08/20/2022, 19:43:41          2000      40684      59707
+state_channel_close_v1    1660995371 08/20/2022, 19:36:11          2000      12125      18878
+state_channel_close_v1    1660994527 08/20/2022, 19:22:07            26        226        418
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ijc1c1hxczRmdG50WHRuay0ydHhrbUd4WVFQeU5IRVQ1d01lcWxNXzR0SDgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODgwMTcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660993927 08/20/2022, 19:12:07           186      11554      20960
+state_channel_close_v1    1660993877 08/20/2022, 19:11:17          2000      14116      17529
+state_channel_close_v1    1660993527 08/20/2022, 19:05:27          2000      81981      90706
+state_channel_close_v1    1660992977 08/20/2022, 18:56:17             1          4          4
+state_channel_close_v1    1660992507 08/20/2022, 18:48:27             8       1024       2049
+state_channel_close_v1    1660991957 08/20/2022, 18:39:17          2000       7613       8809
+state_channel_close_v1    1660991807 08/20/2022, 18:36:47            18      22834      45683
+state_channel_close_v1    1660991207 08/20/2022, 18:26:47             4         14         14
+state_channel_close_v1    1660990429 08/20/2022, 18:13:49          2000      42725      55627
+state_channel_close_v1    1660988462 08/20/2022, 17:41:02          2000       9447      14767
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImtSUzhITUFLSGVZTVRWaE5hRmNIVldDY3RxcS1wNUlaUDZEa3gyTDlkZ0kiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODc4OTcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660986779 08/20/2022, 17:12:59          2000       4831       7147
+state_channel_close_v1    1660986729 08/20/2022, 17:12:09          2000      39853      56933
+state_channel_close_v1    1660985929 08/20/2022, 16:58:49          2000      11334      14235
+state_channel_close_v1    1660985477 08/20/2022, 16:51:17             0          0          0
+state_channel_close_v1    1660985077 08/20/2022, 16:44:37             3          3          3
+state_channel_close_v1    1660985027 08/20/2022, 16:43:47          2000      23032      37889
+state_channel_close_v1    1660983671 08/20/2022, 16:21:11          2000      18915      30450
+state_channel_close_v1    1660983621 08/20/2022, 16:20:21          2000      82557      92111
+state_channel_close_v1    1660983521 08/20/2022, 16:18:41             0          0          0
+state_channel_close_v1    1660983471 08/20/2022, 16:17:51             3         15         15
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlNkem1ydXFiaHlrYy1wbG9ZSXVsSjE0LV95SlBPNDltc3hsYllvbGdJWUEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODc3OTksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660983221 08/20/2022, 16:13:41          2000       7649      12483
+state_channel_close_v1    1660980253 08/20/2022, 15:24:13          2000       9454      12078
+state_channel_close_v1    1660979903 08/20/2022, 15:18:23          2000      69093     198042
+state_channel_close_v1    1660978678 08/20/2022, 14:57:58            13       1748       3498
+state_channel_close_v1    1660978178 08/20/2022, 14:49:38          2000      38823      47365
+state_channel_close_v1    1660978128 08/20/2022, 14:48:48            20      28616      57251
+state_channel_close_v1    1660977388 08/20/2022, 14:36:28          2000      40513      59012
+state_channel_close_v1    1660977188 08/20/2022, 14:33:08             0          0          0
+state_channel_close_v1    1660976238 08/20/2022, 14:17:18             4         17         17
+state_channel_close_v1    1660975777 08/20/2022, 14:09:37          2000      12371      20324
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IllpZWFBYXBJcjFPN3ZHOWJXaGlxQms0X3YtSXp1VzhyTmlHSUgyemp1UUUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODc2NDcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660973112 08/20/2022, 13:25:12          2000       8817      14020
+state_channel_close_v1    1660973112 08/20/2022, 13:25:12            11         42         42
+state_channel_close_v1    1660972862 08/20/2022, 13:21:02          2000      68687      78715
+state_channel_close_v1    1660972182 08/20/2022, 13:09:42            36       1447       1485
+state_channel_close_v1    1660971382 08/20/2022, 12:56:22          2000      10029      14568
+state_channel_close_v1    1660969774 08/20/2022, 12:29:34          2000      28926      48288
+state_channel_close_v1    1660968326 08/20/2022, 12:05:26             1          1          1
+state_channel_close_v1    1660968276 08/20/2022, 12:04:36          1803       9659      11533
+state_channel_close_v1    1660968076 08/20/2022, 12:01:16          2000      47691      75721
+state_channel_close_v1    1660967976 08/20/2022, 11:59:36             5         16         16
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InhwVVlWcTBGZk5QSE9CZ0cwZDdXbmFTR2t4d1U2MHdkNUc1UjJ0RWhCQ1UiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODc0OTMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660966223 08/20/2022, 11:30:23          2000      14420      17547
+state_channel_close_v1    1660964769 08/20/2022, 11:06:09            10       1652       3305
+state_channel_close_v1    1660964719 08/20/2022, 11:05:19          2000      18474      46954
+state_channel_close_v1    1660964519 08/20/2022, 11:01:59          2000       8820      11225
+state_channel_close_v1    1660964259 08/20/2022, 10:57:39            17      26140      52302
+state_channel_close_v1    1660964053 08/20/2022, 10:54:13          2000      42893      47689
+state_channel_close_v1    1660962803 08/20/2022, 10:33:23          2000      44665      55631
+state_channel_close_v1    1660961212 08/20/2022, 10:06:52             2          3          3
+state_channel_close_v1    1660960428 08/20/2022, 09:53:48             5         18         18
+state_channel_close_v1    1660959276 08/20/2022, 09:34:36          2000      28205     152105
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlhOTGUtZlZUakkzdExURTljYTdzTFFGckVKZDk2d1c5QW5DU1BDWHVNTEUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODczMjEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660959119 08/20/2022, 09:31:59          2000      37996      52351
+state_channel_close_v1    1660959019 08/20/2022, 09:30:19          2000      11483      19071
+state_channel_close_v1    1660958169 08/20/2022, 09:16:09             0          0          0
+state_channel_close_v1    1660958169 08/20/2022, 09:16:09          2000     101821     112061
+state_channel_close_v1    1660957559 08/20/2022, 09:05:59          2000      17808      28646
+state_channel_close_v1    1660957409 08/20/2022, 09:03:29          2000       5061       7306
+state_channel_close_v1    1660956459 08/20/2022, 08:47:39            24        235        441
+state_channel_close_v1    1660956109 08/20/2022, 08:41:49          2000       9658      15214
+state_channel_close_v1    1660955458 08/20/2022, 08:30:58           139      11430      21056
+state_channel_close_v1    1660954658 08/20/2022, 08:17:38          2000      36162      58408
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlJEOGVxU20yVzhaclBNZkJzdnA5YUpieWROZ2I4M2o2YjNadTQ3d3BlXzgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODcyMjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660953207 08/20/2022, 07:53:27             4          6          6
+state_channel_close_v1    1660953107 08/20/2022, 07:51:47             0          0          0
+state_channel_close_v1    1660952905 08/20/2022, 07:48:25          2000       8852      11831
+state_channel_close_v1    1660952502 08/20/2022, 07:41:42             5         17         17
+state_channel_close_v1    1660951187 08/20/2022, 07:19:47            10         77         77
+state_channel_close_v1    1660950887 08/20/2022, 07:14:47             9       1167       2334
+state_channel_close_v1    1660950687 08/20/2022, 07:11:27          2000      18673      24338
+state_channel_close_v1    1660950587 08/20/2022, 07:09:47          2000      40731      48923
+state_channel_close_v1    1660950237 08/20/2022, 07:03:57            15      25118      50250
+state_channel_close_v1    1660949937 08/20/2022, 06:58:57          2000      42741      61200
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InFxOF9JRU5ZeU92d3MyWFRmTEF0M3F0MFVKYmMtRFM2R0Iza1hWMEdMQjQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODcxMzUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660949279 08/20/2022, 06:47:59          2000       9661      12007
+state_channel_close_v1    1660948429 08/20/2022, 06:33:49          2000      30870     179714
+state_channel_close_v1    1660946241 08/20/2022, 05:57:21          2000      16667      56695
+state_channel_close_v1    1660945491 08/20/2022, 05:44:51             0          0          0
+state_channel_close_v1    1660944991 08/20/2022, 05:36:31             1          2          2
+state_channel_close_v1    1660944531 08/20/2022, 05:28:51          2000      83202      91890
+state_channel_close_v1    1660944481 08/20/2022, 05:28:01             6         17         17
+state_channel_close_v1    1660944281 08/20/2022, 05:24:41             0          0          0
+state_channel_close_v1    1660943781 08/20/2022, 05:16:21          2000       4311       6438
+state_channel_close_v1    1660943331 08/20/2022, 05:08:51          2000      15322      17358
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InJScmdsOHkwSFdpZ0xzSVh2SFptM1pzS1FFSkE2TGs0WXNuQVFDaElTYkkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODcwMDQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660942209 08/20/2022, 04:50:09          2000      15707      24669
+state_channel_close_v1    1660940722 08/20/2022, 04:25:22          2000      13089      18829
+state_channel_close_v1    1660940672 08/20/2022, 04:24:32          2000      25812      41101
+state_channel_close_v1    1660940372 08/20/2022, 04:19:32          1633       5743       7075
+state_channel_close_v1    1660939172 08/20/2022, 03:59:32          2000      38030      56551
+state_channel_close_v1    1660939072 08/20/2022, 03:57:52          2000      12572      15325
+state_channel_close_v1    1660937096 08/20/2022, 03:24:56             0          0          0
+state_channel_close_v1    1660936846 08/20/2022, 03:20:46          2000      10294      12427
+state_channel_close_v1    1660936846 08/20/2022, 03:20:46            12       1153       2307
+state_channel_close_v1    1660936746 08/20/2022, 03:19:06             4         18         18
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlFUb3oxb0FSblRxN3FJelNMNVZ3bXAwQ1F5RWZBeDFVc1BFUzVMRG5rbDQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODY4NzQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660936296 08/20/2022, 03:11:36            15      24670      49352
+state_channel_close_v1    1660935385 08/20/2022, 02:56:25          2000      25005     129406
+state_channel_close_v1    1660935235 08/20/2022, 02:53:55          2000      38424      47563
+state_channel_close_v1    1660934885 08/20/2022, 02:48:05             9         33         37
+state_channel_close_v1    1660934335 08/20/2022, 02:38:55            43       1797       1832
+state_channel_close_v1    1660934335 08/20/2022, 02:38:55          2000      13466      15633
+state_channel_close_v1    1660933863 08/20/2022, 02:31:03            21        370        370
+state_channel_close_v1    1660933863 08/20/2022, 02:31:03          2000      96699     106153
+state_channel_close_v1    1660931169 08/20/2022, 01:46:09          2000       7948      12650
+state_channel_close_v1    1660930062 08/20/2022, 01:27:42          2000      13528      22635
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InQzSWtLbkIyXy1jOVNieDkwWlFvVFFfSkpFUVlZU3NHWFVuTXdrVVEwUjQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODY3NDIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660929462 08/20/2022, 01:17:42          2000      34780      51761
+state_channel_close_v1    1660929212 08/20/2022, 01:13:32             0          0          0
+state_channel_close_v1    1660929162 08/20/2022, 01:12:42          2000      52920     170818
+state_channel_close_v1    1660928611 08/20/2022, 01:03:31          2000      11778      15098
+state_channel_close_v1    1660928509 08/20/2022, 01:01:49             2         14         14
+state_channel_close_v1    1660928409 08/20/2022, 01:00:09          2000       5410       7961
+state_channel_close_v1    1660928159 08/20/2022, 00:55:59          2000      90774     133987
+state_channel_close_v1    1660926657 08/20/2022, 00:30:57          2000      24883      41670
+state_channel_close_v1    1660926007 08/20/2022, 00:20:07          2000      15066      21754
+state_channel_close_v1    1660925248 08/20/2022, 00:07:28          2000      19963      31422
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkdnTllQeHNtRWRfYkx3SzlrMzlHOVF1Q0VzUy12eXhJaFQ5NDZNaDBBcVkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODY2NDksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660924948 08/20/2022, 00:02:28          2000      12956      16860
+state_channel_close_v1    1660923034 08/19/2022, 23:30:34            11       1416       2833
+state_channel_close_v1    1660922984 08/19/2022, 23:29:44          2000      10123      13978
+state_channel_close_v1    1660922284 08/19/2022, 23:18:04            17      25092      50203
+state_channel_close_v1    1660921461 08/19/2022, 23:04:21          2000      44462      53252
+state_channel_close_v1    1660921311 08/19/2022, 23:01:51             1          3          3
+state_channel_close_v1    1660921061 08/19/2022, 22:57:41          2000      57799      62629
+state_channel_close_v1    1660920711 08/19/2022, 22:51:51          2000      38591      56502
+state_channel_close_v1    1660920611 08/19/2022, 22:50:11             2         14         14
+state_channel_close_v1    1660920311 08/19/2022, 22:45:11          2000      21719      24982
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InlYWWdFcWgyd01rc1pVUkQ4aHNNanZtNUpmU3VlSWtRUWVaQmhFUUxqYjgiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODY1NTEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660919206 08/19/2022, 22:26:46          2000      58901     179282
+state_channel_close_v1    1660918602 08/19/2022, 22:16:42             0          0          0
+state_channel_close_v1    1660918002 08/19/2022, 22:06:42            24        192        343
+state_channel_close_v1    1660917352 08/19/2022, 21:55:52           125      10453      19122
+state_channel_close_v1    1660915145 08/19/2022, 21:19:05          2000      62476      93029
+state_channel_close_v1    1660914745 08/19/2022, 21:12:25          2000       9362      15230
+state_channel_close_v1    1660914395 08/19/2022, 21:06:35          2000      61792      69807
+state_channel_close_v1    1660913088 08/19/2022, 20:44:48             0          0          0
+state_channel_close_v1    1660913038 08/19/2022, 20:43:58          2000      11540      17072
+state_channel_close_v1    1660912938 08/19/2022, 20:42:18             4         19         19
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImdTWTJjX2lEbzJ1NGJKaVhoNjRKcUU1dGhOczB4SE1lbVVsbXdjcjI2Uk0iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODY0MDQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660912738 08/19/2022, 20:38:58          2000       6649      10511
+state_channel_close_v1    1660911678 08/19/2022, 20:21:18          2000      37018      54053
+state_channel_close_v1    1660911478 08/19/2022, 20:17:58          2000      28081      45903
+state_channel_close_v1    1660911078 08/19/2022, 20:11:18          2000      12452      14735
+state_channel_close_v1    1660909471 08/19/2022, 19:44:31          2000      45510     139433
+state_channel_close_v1    1660909221 08/19/2022, 19:40:21             9       1601       3202
+state_channel_close_v1    1660909221 08/19/2022, 19:40:21          2000      11972      14267
+state_channel_close_v1    1660908517 08/19/2022, 19:28:37            14      24086      48188
+state_channel_close_v1    1660908317 08/19/2022, 19:25:17          2000      38752      48809
+state_channel_close_v1    1660907666 08/19/2022, 19:14:26          2000      14820      23264
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InNoRlVfLWJ3TEpMRzhzT1ZBWlFNeUF0VUdBMGNtb1dtejU4bEIwR1M2RWMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODYzMDAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660906712 08/19/2022, 18:58:32          2000      15858      20290
+state_channel_close_v1    1660906362 08/19/2022, 18:52:42             2       1912       2000
+state_channel_close_v1    1660906312 08/19/2022, 18:51:52          2000     118423     148067
+state_channel_close_v1    1660906112 08/19/2022, 18:48:32             2        202        219
+state_channel_close_v1    1660905205 08/19/2022, 18:33:25             0          0          0
+state_channel_close_v1    1660904452 08/19/2022, 18:20:52             3         15         15
+state_channel_close_v1    1660902441 08/19/2022, 17:47:21          2000      38195      56474
+state_channel_close_v1    1660902341 08/19/2022, 17:45:41          2000      35730     111076
+state_channel_close_v1    1660901541 08/19/2022, 17:32:21          2000      21466      29350
+state_channel_close_v1    1660901291 08/19/2022, 17:28:11            27        300        345
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ik9uSE5CdWJfWnA2R0VfNDlQMk13dmgtNDY0OXltcTh5a2JqOTVGSml3YVEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODYxNzMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660900964 08/19/2022, 17:22:44          2000       7431      11297
+state_channel_close_v1    1660899864 08/19/2022, 17:04:24           731      26023      37080
+state_channel_close_v1    1660899462 08/19/2022, 16:57:42          2000      13151      20760
+state_channel_close_v1    1660897733 08/19/2022, 16:28:53          2000      21413      34782
+state_channel_close_v1    1660897633 08/19/2022, 16:27:13             1          2          2
+state_channel_close_v1    1660897333 08/19/2022, 16:22:13          2000      14544      18215
+state_channel_close_v1    1660896733 08/19/2022, 16:12:13             3         13         13
+state_channel_close_v1    1660896683 08/19/2022, 16:11:23            11         71         71
+state_channel_close_v1    1660896568 08/19/2022, 16:09:28          2000      64827      80759
+state_channel_close_v1    1660895954 08/19/2022, 15:59:14            37        779        822
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Im1TVGkyUUlBTE9NaTdvaW9YYTBfWUIwYWI0b0JFLUZGUWp3SmFSdWd1QzAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODYwNjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660895704 08/19/2022, 15:55:04          2000      47362     150695
+state_channel_close_v1    1660895404 08/19/2022, 15:50:04          2000       8331      11698
+state_channel_close_v1    1660895354 08/19/2022, 15:49:14             9       1387       2775
+state_channel_close_v1    1660894604 08/19/2022, 15:36:44            16      23751      47514
+state_channel_close_v1    1660894299 08/19/2022, 15:31:39          2000       7316      11240
+state_channel_close_v1    1660894249 08/19/2022, 15:30:49            12       1442       1442
+state_channel_close_v1    1660893899 08/19/2022, 15:24:59          2000      46675      56714
+state_channel_close_v1    1660893549 08/19/2022, 15:19:09          2000      24924      34232
+state_channel_close_v1    1660892619 08/19/2022, 15:03:39          2000      31894      48180
+state_channel_close_v1    1660891369 08/19/2022, 14:42:49          2000      78350      97561
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InVwU0dxeklkQmdiUEkxdU1nU2p1STB4ei1BSWZmTktyWmZUQkNVMjVYMDAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU5NzgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660889909 08/19/2022, 14:18:29             1          2          2
+state_channel_close_v1    1660889309 08/19/2022, 14:08:29          2000      19027      28422
+state_channel_close_v1    1660889156 08/19/2022, 14:05:56          2000      12973      20130
+state_channel_close_v1    1660889004 08/19/2022, 14:03:24             3         15         15
+state_channel_close_v1    1660888404 08/19/2022, 13:53:24          2000      17125      21313
+state_channel_close_v1    1660887298 08/19/2022, 13:34:58          2000      42454     156132
+state_channel_close_v1    1660885644 08/19/2022, 13:07:24          2000       6863      10375
+state_channel_close_v1    1660884544 08/19/2022, 12:49:04          2000     122681     154776
+state_channel_close_v1    1660884494 08/19/2022, 12:48:14           374      20155      20162
+state_channel_close_v1    1660884229 08/19/2022, 12:43:49          2000      37805      55685
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImJwTUEtcU5vV0QzSkZWazgyd3o4SDRUYk5yU1lwbkZITWJaZVVIaHZjZ00iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU4MzYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660884068 08/19/2022, 12:41:08          2000      20809      33206
+state_channel_close_v1    1660883368 08/19/2022, 12:29:28          2000       9545      11180
+state_channel_close_v1    1660882568 08/19/2022, 12:16:08          2000      16092      25154
+state_channel_close_v1    1660882165 08/19/2022, 12:09:25             0          0          0
+state_channel_close_v1    1660881765 08/19/2022, 12:02:45          2000      42198      51184
+state_channel_close_v1    1660881765 08/19/2022, 12:02:45          2000      22125      29711
+state_channel_close_v1    1660881615 08/19/2022, 12:00:15             8       1138       2277
+state_channel_close_v1    1660881365 08/19/2022, 11:56:05             3         15         15
+state_channel_close_v1    1660881065 08/19/2022, 11:51:05            14      24121      48260
+state_channel_close_v1    1660879795 08/19/2022, 11:29:55            16        138        240
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImU4aC1OVkRyVWk2UGhtU3I5aG0xa25Lcm1JUXRFZ2xWbHhSMF9TcWRUWmMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU3NDgsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660879345 08/19/2022, 11:22:25           166      12189      21724
+state_channel_close_v1    1660879195 08/19/2022, 11:19:55          2000      22837      27808
+state_channel_close_v1    1660877742 08/19/2022, 10:55:42          2000      27275      39505
+state_channel_close_v1    1660875606 08/19/2022, 10:20:06          2000      11854      15812
+state_channel_close_v1    1660874433 08/19/2022, 10:00:33             2          2          2
+state_channel_close_v1    1660874083 08/19/2022, 09:54:43          2000      38541      53838
+state_channel_close_v1    1660874033 08/19/2022, 09:53:53          2000     122803     145204
+state_channel_close_v1    1660873765 08/19/2022, 09:49:25          2000      15381      24794
+state_channel_close_v1    1660873456 08/19/2022, 09:44:16             5         17         17
+state_channel_close_v1    1660873106 08/19/2022, 09:38:26          2000      24261      28787
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Inh6U1FreHFxY3RybEFXRkw3NTFWZWp4TE9QN24zWUdyWWxDa0I5R3FodzQiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU2MTksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660870880 08/19/2022, 09:01:20          1307       6508       7873
+state_channel_close_v1    1660870624 08/19/2022, 08:57:04          2000      22907      27740
+state_channel_close_v1    1660870624 08/19/2022, 08:57:04          2000      13151      20542
+state_channel_close_v1    1660870171 08/19/2022, 08:49:31          2000       6218       9094
+state_channel_close_v1    1660869421 08/19/2022, 08:37:01          1914      11018      13656
+state_channel_close_v1    1660869271 08/19/2022, 08:34:31          2000      19352      23636
+state_channel_close_v1    1660868508 08/19/2022, 08:21:48          2000      24027      39019
+state_channel_close_v1    1660868208 08/19/2022, 08:16:48          2000       7212      10335
+state_channel_close_v1    1660867958 08/19/2022, 08:12:38             8        154        154
+state_channel_close_v1    1660867808 08/19/2022, 08:10:08             9       1562       3126
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InEzeERtb3pLdjhIVTF6NUJYUFVOcTNwQm1SQVA4WWdDSzlGakxrN2czM2ciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU1MTQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660867658 08/19/2022, 08:07:38            95       3349       5000
+state_channel_close_v1    1660867458 08/19/2022, 08:04:18            77       3206       5000
+state_channel_close_v1    1660867458 08/19/2022, 08:04:18            80       3279       5000
+state_channel_close_v1    1660867408 08/19/2022, 08:03:28            51       2933       5000
+state_channel_close_v1    1660867106 08/19/2022, 07:58:26          2000      26721      46004
+state_channel_close_v1    1660866956 08/19/2022, 07:55:56          2000      15398      23137
+state_channel_close_v1    1660866956 08/19/2022, 07:55:56            15      23756      47526
+state_channel_close_v1    1660866856 08/19/2022, 07:54:16            79       3332       5000
+state_channel_close_v1    1660866606 08/19/2022, 07:50:06          2000      45818      55439
+state_channel_close_v1    1660866606 08/19/2022, 07:50:06             0          0          0
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkZEdE96enJsVjNGYzBlalhsY3Zqb2xfLXBhYTFWdHZTS19xLWh1ei1RcUUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODU0OTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660865788 08/19/2022, 07:36:28             4         16         16
+state_channel_close_v1    1660865483 08/19/2022, 07:31:23          2000      41181      60027
+state_channel_close_v1    1660864333 08/19/2022, 07:12:13          2000     149835     175321
+state_channel_close_v1    1660863109 08/19/2022, 06:51:49          2000      30761      38751
+state_channel_close_v1    1660859492 08/19/2022, 05:51:32          2000      22027      27724
+state_channel_close_v1    1660858989 08/19/2022, 05:43:09             1          4          4
+state_channel_close_v1    1660858539 08/19/2022, 05:35:39            11         64         64
+state_channel_close_v1    1660858389 08/19/2022, 05:33:09          2000      12902      20255
+state_channel_close_v1    1660858139 08/19/2022, 05:28:59             4         17         17
+state_channel_close_v1    1660857839 08/19/2022, 05:23:59            41       3425       3466
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImZUcVdhMlRReS0waFhiWkhGT055TUFZVnMxWks5NjVobVpGRUNKMm5GdUEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODUzMTYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660857263 08/19/2022, 05:14:23          2000       5744       9752
+state_channel_close_v1    1660855861 08/19/2022, 04:51:01          2000      39724      57232
+state_channel_close_v1    1660855555 08/19/2022, 04:45:55          2000      12684      15295
+state_channel_close_v1    1660855355 08/19/2022, 04:42:35          2000      19353      26142
+state_channel_close_v1    1660854705 08/19/2022, 04:31:45          2000       7034      10755
+state_channel_close_v1    1660854237 08/19/2022, 04:23:57          2000       7519       8869
+state_channel_close_v1    1660853972 08/19/2022, 04:19:32            10       1300       2601
+state_channel_close_v1    1660853272 08/19/2022, 04:07:52          2000      24154      38281
+state_channel_close_v1    1660853222 08/19/2022, 04:07:02            14      23800      47615
+state_channel_close_v1    1660852822 08/19/2022, 04:00:22          2000     153044     178017
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InUydVlPTGNCbXA1Nk9peGRrZWlNV2hwX21jZDE1UXlmcFlvYzIzcVlqTGMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODUyMTcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660852622 08/19/2022, 03:57:02          2000      42875      52954
+state_channel_close_v1    1660852319 08/19/2022, 03:51:59          2000       6492      10831
+state_channel_close_v1    1660851716 08/19/2022, 03:41:56          2000      15169      22836
+state_channel_close_v1    1660851416 08/19/2022, 03:36:56             2          3          3
+state_channel_close_v1    1660850359 08/19/2022, 03:19:19             5         18         18
+state_channel_close_v1    1660850259 08/19/2022, 03:17:39          2000      18405      19411
+state_channel_close_v1    1660850209 08/19/2022, 03:16:49            19        406        406
+state_channel_close_v1    1660849409 08/19/2022, 03:03:29          2000      12496      14942
+state_channel_close_v1    1660849055 08/19/2022, 02:57:35          2000      31117      38973
+state_channel_close_v1    1660846996 08/19/2022, 02:23:16          2000      74525      79311
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Il83QzJVRW9RckU4aTN3UE5aOW95ZEV6a3ZaTmhWYWhneDVkdmpNYndfVG8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODUxMDEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660846946 08/19/2022, 02:22:26          2000      25188      36992
+state_channel_close_v1    1660846596 08/19/2022, 02:16:36          2000      86546      92129
+state_channel_close_v1    1660845516 08/19/2022, 01:58:36          2000      32015      47313
+state_channel_close_v1    1660843342 08/19/2022, 01:22:22             2          2          2
+state_channel_close_v1    1660843092 08/19/2022, 01:18:12          2000      17823      28494
+state_channel_close_v1    1660842742 08/19/2022, 01:12:22             4         11         11
+state_channel_close_v1    1660841726 08/19/2022, 00:55:26          2000      11781      14851
+state_channel_close_v1    1660841226 08/19/2022, 00:47:06            19         70        124
+state_channel_close_v1    1660840976 08/19/2022, 00:42:56           181      13126      22467
+state_channel_close_v1    1660840422 08/19/2022, 00:33:42          2000      10753      14630
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlBoblR2aFlDS1Z1NHk0Y295T2d4RWVYdVBJLU9DRzFST2Z5QU5PRzgyMk0iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQ5NzEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660840122 08/19/2022, 00:28:42             7        933       1866
+state_channel_close_v1    1660839522 08/19/2022, 00:18:42            13      24919      49856
+state_channel_close_v1    1660839422 08/19/2022, 00:17:02          2000       6115       8998
+state_channel_close_v1    1660838807 08/19/2022, 00:06:47          2000      50748      62750
+state_channel_close_v1    1660837300 08/18/2022, 23:41:40          2000      22385      32190
+state_channel_close_v1    1660836740 08/18/2022, 23:32:20          2000      21750      33497
+state_channel_close_v1    1660836440 08/18/2022, 23:27:20          2000      15704      24486
+state_channel_close_v1    1660835640 08/18/2022, 23:14:00             2          2          2
+state_channel_close_v1    1660834866 08/18/2022, 23:01:06             6         21         21
+state_channel_close_v1    1660833866 08/18/2022, 22:44:26          2000      19290      28788
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlV0ekhmd2QzelZkWmNKRVktWnR3X0xkZHVGWHFndXlHSkxjbnY0ZGNkWkkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQ4NDEsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660833005 08/18/2022, 22:30:05             1        434        434
+state_channel_close_v1    1660829598 08/18/2022, 21:33:18             1        530        530
+state_channel_close_v1    1660828748 08/18/2022, 21:19:08          2000      25301      34987
+state_channel_close_v1    1660827367 08/18/2022, 20:56:07          2000      15737      23140
+state_channel_close_v1    1660826867 08/18/2022, 20:47:47             0          0          0
+state_channel_close_v1    1660826817 08/18/2022, 20:46:57          2000      28206      41929
+state_channel_close_v1    1660826767 08/18/2022, 20:46:07             5         17         17
+state_channel_close_v1    1660826267 08/18/2022, 20:37:47          1588       7569       9027
+state_channel_close_v1    1660826217 08/18/2022, 20:36:57          2000       8227      10195
+state_channel_close_v1    1660825841 08/18/2022, 20:30:41             9       1070       2144
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlhYaFFHdHZ2aHBJeF9MVXVHcmlUOWNjSXFBekdWOWhxWF9iWWREb1VGcVkiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQ2OTAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660825341 08/18/2022, 20:22:21          2000      30820      36766
+state_channel_close_v1    1660825341 08/18/2022, 20:22:21            13      24179      48372
+state_channel_close_v1    1660824641 08/18/2022, 20:10:41          2000      38016      48761
+state_channel_close_v1    1660823724 08/18/2022, 19:55:24          2000       5034       7332
+state_channel_close_v1    1660822181 08/18/2022, 19:29:41          2000      25253      38909
+state_channel_close_v1    1660820836 08/18/2022, 19:07:16          2000      17366      26289
+state_channel_close_v1    1660819925 08/18/2022, 18:52:05             9         16         16
+state_channel_close_v1    1660819325 08/18/2022, 18:42:05            43       1821       1863
+state_channel_close_v1    1660819125 08/18/2022, 18:38:45             4         13         13
+state_channel_close_v1    1660818422 08/18/2022, 18:27:02          2000      29780      41748
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Ijh1QmFpTFVmSVQyaTdyVEwzS2RubG5pVDhTMDBUcHlkVE40ZlllR2ZudG8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQ1NDQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660815020 08/18/2022, 17:30:20          2000      15248      22650
+state_channel_close_v1    1660813770 08/18/2022, 17:09:30          2000      21718      27239
+state_channel_close_v1    1660813525 08/18/2022, 17:05:25          2000      11952      14276
+state_channel_close_v1    1660812964 08/18/2022, 16:56:04          2000      12221      16583
+state_channel_close_v1    1660812164 08/18/2022, 16:42:44          2000      10500      13949
+state_channel_close_v1    1660812064 08/18/2022, 16:41:04             9       1198       2396
+state_channel_close_v1    1660811857 08/18/2022, 16:37:37          2000      14562      22658
+state_channel_close_v1    1660811457 08/18/2022, 16:30:57          2000     136305     168189
+state_channel_close_v1    1660811207 08/18/2022, 16:26:47            13      24086      48188
+state_channel_close_v1    1660810807 08/18/2022, 16:20:07          2000      41727      53428
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkFUbzMtT19NdDRxOHR5bkFNUXA2RVRycmxJWmZOZ0xDeUpjY2IzTU1NZmsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQzOTQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660809850 08/18/2022, 16:04:10          2000      32002      44229
+state_channel_close_v1    1660808513 08/18/2022, 15:41:53          2000      31825      42321
+state_channel_close_v1    1660808463 08/18/2022, 15:41:03          2000      20097      30281
+state_channel_close_v1    1660808313 08/18/2022, 15:38:33          2000       7883      10798
+state_channel_close_v1    1660807513 08/18/2022, 15:25:13          2000      11911      16345
+state_channel_close_v1    1660806608 08/18/2022, 15:10:08          2000      34472      54475
+state_channel_close_v1    1660801860 08/18/2022, 13:51:00            18        169        309
+state_channel_close_v1    1660801310 08/18/2022, 13:41:50           122       7143      10522
+state_channel_close_v1    1660799971 08/18/2022, 13:19:31          2000      31428      45436
+state_channel_close_v1    1660799921 08/18/2022, 13:18:41          2000      13785      17749
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImZleHYtSXJCNkxzbkczX3NTd2RPajVpMFVYTnFjSjVjaVVjbXgwZmR0NmciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQxODAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660799671 08/18/2022, 13:14:31          1964      10579      12863
+state_channel_close_v1    1660799621 08/18/2022, 13:13:41          2000      32816      45293
+state_channel_close_v1    1660798621 08/18/2022, 12:57:01          2000       7646       8881
+state_channel_close_v1    1660798121 08/18/2022, 12:48:41            10       1277       2553
+state_channel_close_v1    1660797360 08/18/2022, 12:36:00            13      24008      48030
+state_channel_close_v1    1660796810 08/18/2022, 12:26:50          2000      38473      48307
+state_channel_close_v1    1660796760 08/18/2022, 12:26:00          2000      14656      22509
+state_channel_close_v1    1660795040 08/18/2022, 11:57:20          2000       5473       8385
+state_channel_close_v1    1660794003 08/18/2022, 11:40:03          2000       8897      13616
+state_channel_close_v1    1660791931 08/18/2022, 11:05:31             0          0          0
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjVmbVpDNXctc3JlZWgzOXR2cEdxY0xIYUhkd0M2R0ZUWVVRVm81U2dvQ3MiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODQwMjUsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660791931 08/18/2022, 11:05:31          2000      10548      13166
+state_channel_close_v1    1660791331 08/18/2022, 10:55:31          2000      29712      40712
+state_channel_close_v1    1660790876 08/18/2022, 10:47:56          2000      20867      29672
+state_channel_close_v1    1660790726 08/18/2022, 10:45:26          2000      10441      12591
+state_channel_close_v1    1660789826 08/18/2022, 10:30:26          2000      31961      44292
+state_channel_close_v1    1660789553 08/18/2022, 10:25:53          2000      27880      34741
+state_channel_close_v1    1660788342 08/18/2022, 10:05:42             0          0          0
+state_channel_close_v1    1660785584 08/18/2022, 09:19:44          2000       9874      12515
+state_channel_close_v1    1660784784 08/18/2022, 09:06:24          2000      11556      14707
+state_channel_close_v1    1660784275 08/18/2022, 08:57:55          2000      15877      21343
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Imt1djY5RVRsZnFZQVpKWE51SkZCOWhyX2s5bUhmcEkyNkFHN0NiYW1ZbWMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODM4NzQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660784175 08/18/2022, 08:56:15            11       1188       2377
+state_channel_close_v1    1660784075 08/18/2022, 08:54:35          2000       8233      11489
+state_channel_close_v1    1660783475 08/18/2022, 08:44:35            16        165        165
+state_channel_close_v1    1660783375 08/18/2022, 08:42:55            16      23713      47440
+state_channel_close_v1    1660782925 08/18/2022, 08:35:25          2000      40713      50973
+state_channel_close_v1    1660781547 08/18/2022, 08:12:27          2000      24296      35176
+state_channel_close_v1    1660781047 08/18/2022, 08:04:07             8         21         21
+state_channel_close_v1    1660780620 08/18/2022, 07:57:00            31       1727       1764
+state_channel_close_v1    1660778045 08/18/2022, 07:14:05          2000      18293      28990
+state_channel_close_v1    1660777845 08/18/2022, 07:10:45          2000       7119      10752
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Im5HTGljdUxKNUNJY2hqZl90YTNsVkZSYk1VTGFldzhXSWc1OG85SkM2ZXciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODM3NDcsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660776988 08/18/2022, 06:56:28          2000       8021      11359
+state_channel_close_v1    1660776838 08/18/2022, 06:53:58          2000      18331      21766
+state_channel_close_v1    1660775623 08/18/2022, 06:33:43          2000      19393      22127
+state_channel_close_v1    1660774204 08/18/2022, 06:10:04          2000      40052      64458
+state_channel_close_v1    1660773304 08/18/2022, 05:55:04          2000      23927      33834
+state_channel_close_v1    1660771492 08/18/2022, 05:24:52          1948       9727      11743
+state_channel_close_v1    1660771274 08/18/2022, 05:21:14          2000      32954      46577
+state_channel_close_v1    1660770614 08/18/2022, 05:10:14          2000      43614     146003
+state_channel_close_v1    1660770264 08/18/2022, 05:04:24          2000       6777       8182
+state_channel_close_v1    1660770114 08/18/2022, 05:01:54          2000     124394     158157
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjlBSVJBaGEwTGNDYm9kSUpnNV9Qem8yYTlNYlhDbzBYMi0zWmZJc0VWOGsiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODM1OTQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660770114 08/18/2022, 05:01:54            11       1271       2543
+state_channel_close_v1    1660769714 08/18/2022, 04:55:14          2000      13796      18517
+state_channel_close_v1    1660769650 08/18/2022, 04:54:10          2000      34377      41273
+state_channel_close_v1    1660769443 08/18/2022, 04:50:43            17      23962      47943
+state_channel_close_v1    1660768893 08/18/2022, 04:41:33          2000      41502      52038
+state_channel_close_v1    1660764186 08/18/2022, 03:23:06            23         57         64
+state_channel_close_v1    1660763186 08/18/2022, 03:06:26          2000      22972      32848
+state_channel_close_v1    1660763036 08/18/2022, 03:03:56           271       3691       3963
+state_channel_close_v1    1660762986 08/18/2022, 03:03:06          2000       4627       6363
+state_channel_close_v1    1660762384 08/18/2022, 02:53:04          2000      41793     139805
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Inl6RUV5dGVfSXBMZzllMWFqeHlzaDNMelZFM1IwM25va2U0bHJsSW1XTE0iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODM0NDMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660761834 08/18/2022, 02:43:54          2000       9463      14615
+state_channel_close_v1    1660761684 08/18/2022, 02:41:24          2000     149764     189546
+state_channel_close_v1    1660760927 08/18/2022, 02:28:47          2000      14511      18110
+state_channel_close_v1    1660760727 08/18/2022, 02:25:27          2000      39651      62355
+state_channel_close_v1    1660759071 08/18/2022, 01:57:51          2000      16223      25906
+state_channel_close_v1    1660757085 08/18/2022, 01:24:45          2000       9506      11809
+state_channel_close_v1    1660756085 08/18/2022, 01:08:05            10       1152       2304
+state_channel_close_v1    1660755985 08/18/2022, 01:06:25          2000      12913      15812
+state_channel_close_v1    1660755435 08/18/2022, 00:57:15          2000       8742      12524
+state_channel_close_v1    1660755347 08/18/2022, 00:55:47            19      25355      50708
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IlZNNGFIQVNIc1NhZTdvUTkzVzc4dGdKTTJBQ1UxQm1HeXNLM1FETEtsbW8iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODMzMDYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660754944 08/18/2022, 00:49:04          2000      14842      18361
+state_channel_close_v1    1660754494 08/18/2022, 00:41:34          2000      43895      56483
+state_channel_close_v1    1660754344 08/18/2022, 00:39:04          2000      55899     195459
+state_channel_close_v1    1660754194 08/18/2022, 00:36:34          2000      15386      22731
+state_channel_close_v1    1660753338 08/18/2022, 00:22:18            86       1921       1921
+state_channel_close_v1    1660752988 08/18/2022, 00:16:28          2000      40186      59620
+state_channel_close_v1    1660751148 08/17/2022, 23:45:48             0          0          0
+state_channel_close_v1    1660750748 08/17/2022, 23:39:08             0          0          0
+state_channel_close_v1    1660748852 08/17/2022, 23:07:32          2000      18555      25527
+state_channel_close_v1    1660747621 08/17/2022, 22:47:01          2000      11802      15707
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6InNpeHhjVmlNeFBHbHJNbU5QZWZ6RFNJRFZTdzlPdHg3YkI5Mm9oRkxKVDAiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODMxNTQsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660747521 08/17/2022, 22:45:21          2000       9631      15177
+state_channel_close_v1    1660746521 08/17/2022, 22:28:41             7         10         11
+state_channel_close_v1    1660746521 08/17/2022, 22:28:41          1464     116351     147761
+state_channel_close_v1    1660746237 08/17/2022, 22:23:57            23        123        159
+state_channel_close_v1    1660746087 08/17/2022, 22:21:27          2000      10535      13255
+state_channel_close_v1    1660745737 08/17/2022, 22:15:37             0          0          0
+state_channel_close_v1    1660745637 08/17/2022, 22:13:57          2000       7087      11180
+state_channel_close_v1    1660745437 08/17/2022, 22:10:37           377      19444      26208
+state_channel_close_v1    1660744578 08/17/2022, 21:56:18             1        469        938
+state_channel_close_v1    1660744428 08/17/2022, 21:53:48          2000      12996      17617
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkYzT2ZQenpUcGM2WmlvUVRQX2ZNbGlVQzVQVEpGanBPNVFpZ3pucUxISVEiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODMwOTIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660744028 08/17/2022, 21:47:08          2000      38918      62674
+state_channel_close_v1    1660743728 08/17/2022, 21:42:08            26      13345      13346
+state_channel_close_v1    1660743678 08/17/2022, 21:41:18             6          7          7
+state_channel_close_v1    1660742695 08/17/2022, 21:24:55          2000       6674       9159
+state_channel_close_v1    1660742645 08/17/2022, 21:24:05          2000      47438     162033
+state_channel_close_v1    1660742595 08/17/2022, 21:23:15            19        289        289
+state_channel_close_v1    1660742345 08/17/2022, 21:19:05             6         20         20
+state_channel_close_v1    1660742145 08/17/2022, 21:15:45          2000       9596      11762
+state_channel_close_v1    1660742045 08/17/2022, 21:14:05            12       1758       3517
+state_channel_close_v1    1660741745 08/17/2022, 21:09:05            33       2532       2573
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Im5OSmhHUjN4a3Y2YnhPQ01tc1lDcnJub2Zoa3R5bFFTRG1PNDNoZWd6OVUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODMwMzksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660741545 08/17/2022, 21:05:45            14      25804      51617
+state_channel_close_v1    1660740900 08/17/2022, 20:55:00          2000     122053     154892
+state_channel_close_v1    1660740700 08/17/2022, 20:51:40          2000      22286      33598
+state_channel_close_v1    1660740300 08/17/2022, 20:45:00          2000      13396      18255
+state_channel_close_v1    1660740250 08/17/2022, 20:44:10          2000      11265      13569
+state_channel_close_v1    1660739500 08/17/2022, 20:31:40          2000      42485      52228
+state_channel_close_v1    1660738023 08/17/2022, 20:07:03          2000      14747      21011
+state_channel_close_v1    1660735789 08/17/2022, 19:29:49          2000      16676      24766
+state_channel_close_v1    1660734341 08/17/2022, 19:05:41          2000      41899      62400
+state_channel_close_v1    1660733465 08/17/2022, 18:51:05          2000      29259      95171
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IjlESGlIZGhxcXBwNUtlOFNvX2l1N0xxTTI3bEtKUWdlaTllSXZXNld3TnciLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODI4NzksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660732815 08/17/2022, 18:40:15          2000     116607     149175
+state_channel_close_v1    1660732465 08/17/2022, 18:34:25          2000       8313      10527
+state_channel_close_v1    1660730115 08/17/2022, 17:55:15          2000      51559      83053
+state_channel_close_v1    1660727970 08/17/2022, 17:19:30          2000      34001      40712
+state_channel_close_v1    1660727720 08/17/2022, 17:15:20            11       1256       2512
+state_channel_close_v1    1660726889 08/17/2022, 17:01:29            13      25754      51522
+state_channel_close_v1    1660726839 08/17/2022, 17:00:39          2000      12169      15417
+state_channel_close_v1    1660726089 08/17/2022, 16:48:09          2000      59218      72066
+state_channel_close_v1    1660725307 08/17/2022, 16:35:07          2000      12086      18353
+state_channel_close_v1    1660724307 08/17/2022, 16:18:27            11         24         27
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Il92RlBFb3VQVjJqZHdwbDRyaXJTekhUUDFqSFN5TEd6UFVQRHlHbW9EMmMiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODI3MDMsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660723785 08/17/2022, 16:09:45           102       2026       2338
+state_channel_close_v1    1660721604 08/17/2022, 15:33:24          2000      16120      24862
+state_channel_close_v1    1660720016 08/17/2022, 15:06:56          2000      20787      25217
+state_channel_close_v1    1660718696 08/17/2022, 14:44:56          2000      16292      20998
+state_channel_close_v1    1660716722 08/17/2022, 14:12:02          2000      39055      58119
+state_channel_close_v1    1660715365 08/17/2022, 13:49:25          2000       9419      18873
+state_channel_close_v1    1660714715 08/17/2022, 13:38:35          2000     121722     159273
+state_channel_close_v1    1660714215 08/17/2022, 13:30:15             0          0          0
+state_channel_close_v1    1660713768 08/17/2022, 13:22:48          2000      25227      31210
+state_channel_close_v1    1660713568 08/17/2022, 13:19:28             9       1237       2474
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImFtRW1OeGNLSEhwZFdFSTU4TWpVcDlPY29OU1NodWRjZ1hVOG04MEFQdU0iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODI0OTIsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660712965 08/17/2022, 13:09:25             2          9         20
+state_channel_close_v1    1660712965 08/17/2022, 13:09:25            14      25229      50475
+state_channel_close_v1    1660712965 08/17/2022, 13:09:25             2          9         20
+state_channel_close_v1    1660712515 08/17/2022, 13:01:55             0          0          0
+state_channel_close_v1    1660712415 08/17/2022, 13:00:15             0          0          0
+state_channel_close_v1    1660712415 08/17/2022, 13:00:15             0          0          0
+state_channel_close_v1    1660712061 08/17/2022, 12:54:21             0          0          0
+state_channel_close_v1    1660712061 08/17/2022, 12:54:21             0          0          0
+state_channel_close_v1    1660711103 08/17/2022, 12:38:23             0          0          0
+state_channel_close_v1    1660710381 08/17/2022, 12:26:21             2          9         19
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6Im1UVjM3SmM4alBsXzQtWjNPM2ltRTF3cG5uWnEzdzZFNFh0VTVzY0xXVk0iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODI0MjksImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660710274 08/17/2022, 12:24:34             2          9         19
+state_channel_close_v1    1660710274 08/17/2022, 12:24:34             2          9         19
+state_channel_close_v1    1660710174 08/17/2022, 12:22:54             0          0          0
+state_channel_close_v1    1660710174 08/17/2022, 12:22:54             0          0          0
+state_channel_close_v1    1660710174 08/17/2022, 12:22:54             0          0          0
+state_channel_close_v1    1660710174 08/17/2022, 12:22:54             0          0          0
+state_channel_close_v1    1660709024 08/17/2022, 12:03:44             1         61        122
+state_channel_close_v1    1660707005 08/17/2022, 11:30:05          2000      18200      25019
+state_channel_close_v1    1660706805 08/17/2022, 11:26:45          2000      39433      55192
+state_channel_close_v1    1660705905 08/17/2022, 11:11:45          2000      81379     105181
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6IkdHRlJzdUZibklHSTZsRGVmclZQeHlSM21lZ3Z5WUY4OGtxY2ZPX1ItaUUiLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODIzNDAsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660705124 08/17/2022, 10:58:44          2000       9867      13455
+state_channel_close_v1    1660705074 08/17/2022, 10:57:54             1         11         22
+state_channel_close_v1    1660704674 08/17/2022, 10:51:14          2000      37479      45281
+state_channel_close_v1    1660704374 08/17/2022, 10:46:14             1         22         43
+state_channel_close_v1    1660703005 08/17/2022, 10:23:25          2000       9865      28461
+state_channel_close_v1    1660702655 08/17/2022, 10:17:35            11         56         56
+state_channel_close_v1    1660702187 08/17/2022, 10:09:47            35       2218       2259
+state_channel_close_v1    1660699625 08/17/2022, 09:27:05          2000     114301     147448
+state_channel_close_v1    1660699625 08/17/2022, 09:27:05          2000      19890      26294
+state_channel_close_v1    1660699575 08/17/2022, 09:26:15            10       1283       2568
+https://api.helium.io/v1/state_channels?min_time=-7%20day&cursor=eyJ0eXBlcyI6WyJzdGF0ZV9jaGFubmVsX2Nsb3NlX3YxIl0sInR4biI6ImZqdmJOQVUtX29rTVp3S0JnbVZqS1JIaTVhbl9FRDkybE9jdzkzWjBZR28iLCJtaW5fYmxvY2siOjE0ODIxOTQsIm1heF9ibG9jayI6MTQ5NDEwMCwiYmxvY2siOjE0ODIyMTYsImFuY2hvcl9ibG9jayI6MTQ5NDEwMH0
+type                      timestamp  datetime                  hotspots    packets        DCs
+state_channel_close_v1    1660698975 08/17/2022, 09:16:15           873       1168       1590
+state_channel_close_v1    1660698975 08/17/2022, 09:16:15            16      24044      48094
+===========================================================
+overview for the last NUMBER_OF_DAYS: 7
+earliest timestamp:	 08/17/2022, 09:16:15
+latest timestamp:	 08/24/2022, 08:49:53
+total packets:	 17869289 	 per day:	 2552756
+total dcs:	 26201311 	 per day:	 3743044
+avg dcs/packet:	 1.47
+value of traffic: USD 262.01 	 per day: USD 37.43
+number of active hotspots:	 130265 (13.97% of the published number of 932348 hotspots)
+sanity check: 	dcburns sum: 26201325 delta: 0.0%
+===========================================================
+saved sorted hotspot list to csv_output/20220824091415hotspots_data_packets7.csv
+===========================================================
+plot packets for Helium hotspot ranked (over this timespan)
+save plot image to plot_output/20220824091415hotspots_data_packets7.png
+close the plot window to continue..
+===========================================================
+RANK HOTSPOTS BY RECEIVED PACKETS
+  rank hotspot                                                 packets   share   cumul location
+     1 112qawmyDWfW13Pb1eoLstThwzbnAPCwEHtLd6gTYS2fXRtJwm8J     201368   1.13%   1.13% Philadelphia, United States
+     2 11AGidfnmK5uXaFC3DqRYBoHC8QCStvgyEQcJSAyy1RiE5TTuZN      178267   1.00%   2.12% Bippen, Germany
+     3 112S4rCqki8Z6MdnsRUj26gPWmrMbTfX3NhzAg3R2RsSFhTmd4wL     177113   0.99%   3.12% Nassau, The Bahamas
+     4 11sXPPXhjkk6pNFCLUUAsKoPj7iWFp49visqUFoN3p2631M2Ddu      157980   0.88%   4.00% Philadelphia, United States
+     5 112ePoj4gbyfoVCNXqDkiVsPfiv2FSAy9k9UdgTEWZeJhXQMnWtn     155591   0.87%   4.87% Philadelphia, United States
+     6 112DCTVEbFi8azQ2KmhSDW2UqRM2ijmiMWKJptnhhPEk3uXvwLyK     147147   0.82%   5.69% Orrington, United States
+     7 11aiZLzwoEjUu6MjN32aVnG1xm658XUFNxUFHrn18XZdiWTeLmF      144385   0.81%   6.50% Hermon, United States
+     8 11kzHgDkiGfCiX96fWz6riNGxjCCXy6bVvyn4SDwzjzwMXNhndU      140117   0.78%   7.29% Orrington, United States
+     9 112Rw3yCm72VHCTmatEnudyYEXkjEnqAA4VbZLzUB3ncvPQskeXn     136636   0.76%   8.05% Philadelphia, United States
+    10 112r3GQZu7zNsLzSCnQRgRay6zmZqGHYGioM6NBevKxUUSbjj4Ht     134712   0.75%   8.80% Philadelphia, United States
+    11 112XzBTSuQrxbNsDLfcmGBcZHKUGNnmUFfPffctbTkXp5MtxstJi     100398   0.56%   9.37% Philadelphia, United States
+    12 13vXww4VsEX3QGfm1wVgZ3R3WbL6TuSYD1HHnJfXeRj8zCXNVg7       94531   0.53%   9.90% Nassau, The Bahamas
+    13 11m1iQG5MnXgWj1Cd4BeqgdGLTcpLsYAPL1MPuDbkbLpNZM9Nje       90149   0.50%  10.40% San Diego, United States
+    14 112L2kWX287FTGy3MSEXEb4sQtTCXo95krto3s52VyZbFJXMdU9g      81407   0.46%  10.86% Philadelphia, United States
+    15 112PR8ZU9qaF8Dy11FRTzYxQAtXtspiRLvc4rLtGH73xYAgSGhxo      78654   0.44%  11.30% Philadelphia, United States
+    16 11WMfJcu4eeKfvf62SSqL6SEP4ygZ5iWUuCodTDN55TniZfUpzr       78643   0.44%  11.74% Philadelphia, United States
+    17 112p4wXeupihW5BeDXpLAYGmjpqjXcfej1dXoxeTrPra7aj6L5gn      72286   0.40%  12.14% San Francisco, United States
+    18 117m7jpxd8tuSDUPJGyYVPVbvhA3gmc5TTahEhviYFb5SurnAqF       64473   0.36%  12.50% Philadelphia, United States
+    19 11zySEn2ayYoKHfnxCs3mC9xuzcKhaBkJayomp4G1eQ2aQhNqAy       62622   0.35%  12.85% Philadelphia, United States
+    20 112kUawt9GpKWqYja6sSrFFCZHUCgsgAjn1F9atpNzQdfnJ5in8D      61363   0.34%  13.19% Miami, United States
+    21 112qKu8ozaJcFeuhoqQgDNPXACTfi6vSeQZNvrRQhAVja5vA12ur      61270   0.34%  13.54% Weed, United States
+    22 112ayhMj8FesfNPLMaaWCZmHSu8HWsaG8vY3Foh4wnqEVNsfuzDh      61098   0.34%  13.88% Weed, United States
+    23 11tkAbgqHU2qU7GTiuwjggEDaYsmRDsbPsJjw5ezsu54coQE7Cu       60992   0.34%  14.22% Weed, United States
+    24 112JgS5gMC5xvNoiW5Q9Ewtc3FxqQ43JNp8S91h3fxpqgDG7TjSj      60871   0.34%  14.56% Weed, United States
+    25 1124SaAEM5rAM5yaktUDtZwLWoVBosCQE7sz4MdjomUxENXSAUtY      60788   0.34%  14.90% New York, United States
+    26 112NpqyB7Jq3SrmG8tbMwW6rwic8ftpkDFPsechdRzuLE59QSNmY      60685   0.34%  15.24% Philadelphia, United States
+    27 112iUbfD9RE7tNHz597EK19dYCinWy9mXWYPR2p1hitKJYukjZvm      60544   0.34%  15.58% Philadelphia, United States
+    28 112Z9hK6yYPne5Ezp49YkFMDgFvWsBmHJcefospcRtRVeQdbA6ip      60418   0.34%  15.92% Philadelphia, United States
+    29 11Q63euUamcdq6gf6XPKtEHSYH9GRYjxGopreC1QCq4YZoV3k3F       57454   0.32%  16.24% Oceanside, United States
+    30 11WcNhLC1vXvwajQ31VKsL3JVtNsbcuqvfhoMQ23LXreiBWa7eu       57115   0.32%  16.56% Philadelphia, United States
+    31 11WAUYVofcQX2aBLus211krCfXv7g5kpSSqwinzwpgDqFnnEAqV       53955   0.30%  16.86% Philadelphia, United States
+    32 112udPvbAXMA9ytmqSCer2kfc3hy9pJpuCRqr8kjfaQWS2dK9re1      53487   0.30%  17.16% Nassau, The Bahamas
+    33 14SgTsXAaa5wv5ungFgwBgKvJtXJGX4uvgGPFCZkZLPEokej68H       53165   0.30%  17.46% Naarden, Netherlands
+    34 14UwsYwnwYJCApdH15qWb1TRZ573nfbW316FNeXNkjxgbJ1ifRW       53128   0.30%  17.76% Naarden, Netherlands
+    35 11c4pxUfwby5rtz2PtRm4oxmndc8WAcQg5BxT7CNpU56hHqvp9h       51545   0.29%  18.04% San Jose, United States
+    36 11TaDM7tvgBe6RSMoLkQCDJiwBLXGiFxYap7rxMDP18SCHEKHrP       43288   0.24%  18.29% San Jose, United States
+    37 1128FzTKdNfePEUcVAMA96Uh2VN76sxh5tXLnvkX9QiHDw8szRZf      42528   0.24%  18.52% Milpitas, United States
+    38 1124dMWjC4nzCaL9JDhJ6TYRpGhqpQyYd67rXSSPKPy6prsbW8as      40527   0.23%  18.75% Nassau, The Bahamas
+    39 11Ls3DwxNygA8aLBnL1MrzEL3mtNhevWNjgaQQu1rpVuKbRL3Vy       39055   0.22%  18.97% Velingrad, Bulgaria
+    40 11PZArsY5b7q9BdprfcZjVqPrEfBXzzFGtNoiEmJ3RFgPJa36mi       38266   0.21%  19.18% Toulon, France
+    41 1127FqapTFrq6MVxZtSGPu5eX6vBq1qJnD1mGaTwPSx1ZwjGybbq      38178   0.21%  19.40% San Jose, United States
+    42 11SyeySippuyUP4EqymtLZDf4FQtDfP9gmauqYyZQRRcrpYmTj1       36055   0.20%  19.60% Philadelphia, United States
+    43 11hvufH8Aw728gAmLVEvGX25oL9B6dkfcnXTkZ6MSYgQuTAWgTe       35259   0.20%  19.80% Huntington Park, United States
+    44 117TBsEySWzDcZwvffcW3Qng46VwZTZ92A8r98iyZARxHquYP4b       34762   0.19%  19.99% Toulon, France
+    45 112AzVjrhMydDwvQ3EvgTouWTg6Bs6NDt7Qo6qN9wfYrfD6Gaa5T      34364   0.19%  20.18% Montagnole, France
+===========================================================
+45 hotspots are receiving 20.0% of the packets
+===========================================================
+SHOW PACKETS PER HOTSPOTS IN STEPS OF 1000 HOTSPOTS
+  rank hotspot                                                 packets   share   cumul
+  1000 11yL5Zr85ZBv9AMEHjzFqkicuv2yYwsLF4FKS9eN26C168WKVd8        2460   0.01%  56.67%
+  2000 11A7TU9Lw6SNvNRvZZ2kqGjQdNSQvFSVYEvF2AWjxcorLRdWudV        1247   0.01%  66.31%
+  3000 112hVVZRGc3dutijeQ7xfk1Cy4rSJwMWQfnQnu6UYJaiVRbfRNdc        844   0.00%  71.97%
+  4000 1126jbK8PhsqLkoXD5Wg97aWuwLHauvMEZYhrPwm1CM5PibnhhQR        617   0.00%  76.01%
+  5000 11pjGkb73LoAvSsePw9pSTXstEqtxfXiuXYjsH8JCDFgTUmf3ke         472   0.00%  79.03%
+  6000 11u5o6NZCsXovuk9iXc6PRvra6LSHitAi7r3gKSQgUN5QfsbvKU         383   0.00%  81.41%
+  7000 11UfiEBxTb8KTwaSYooEUJJP2nDLbcbi7EK5yNQdFGWkRtqnbv9         316   0.00%  83.35%
+  8000 1122RQ23cGUz5J2Wm6od6AtPzdJVyYphgVKJax92B8DhkNTVechc        263   0.00%  84.96%
+  9000 112hy3Ds9kpCiNF2cxQEf2jT5ovfUbwPrqVKaHQtxfteZH7pTwvu        223   0.00%  86.32%
+ 10000 11SuuE1jmWUXZQEL9PsH3U3AG12zdrxeS2Arf9bwpAfFPDU2npz         192   0.00%  87.47%
+ 11000 112KtiwBLvMiLgEiHVZAvFVhSBcq4pp89jpZxhbM4TWGZSJfhL8z        168   0.00%  88.48%
+ 12000 1124qE2Y5jVjZEnArXY8tt7gB7vp4UMygqnKJsGVHy6aQz779pvT        147   0.00%  89.36%
+ 13000 11pkVAxkRNYSCW23DxGURbvdRAoZdMk7HeiAoDbcpDzfsNXTMxu         131   0.00%  90.14%
+ 14000 112fVU8FHhFWXeuwk5FGBf5MRE9iMuSD2rhPHZEQNnz5MfyGa9UZ        117   0.00%  90.83%
+ 15000 112f85YHiszy5pLstoM79ctPwhczifdbHHm7yAvD1tTXUhvU7A5         105   0.00%  91.45%
+ 16000 112k78RfurFWJnBuzjcBDzQNYiPHUsB6Q5LWjNyjJQfCyLgrCe72         94   0.00%  92.00%
+ 17000 11hFGcyFveQAiDqhzAAjkDwNApT3BGVM69vfJVjZW3rm5Ud2aNy          86   0.00%  92.51%
+ 18000 1142KdGfUGXusvMPrqW8s1aqEmsD3b2CPCWgPuvVrHzk1Hux6Sx          78   0.00%  92.97%
+ 19000 11MgTsDzcvJQSRdZE8mARKiG2xRXBaswM79QX2x6JiwJ13hR7xT          71   0.00%  93.39%
+ 20000 11X4TjJXBG1Chwxhezs2Ke9XfTe7B7uCpV1GDT9nMiTf1JcrJAk          65   0.00%  93.77%
+ 21000 112A7VLAhDCN2GnCRzrhsZgrTfPgaynEzVi9ZKXeMGuMjLKSa27j         60   0.00%  94.12%
+ 22000 11QVWVKB3P7nan7TAAziJzXBiDftUvZhLjZeoviRLpemfmuFneR          55   0.00%  94.44%
+ 23000 112vQxzDJzKAZySagSFLRo69pc8Yh9oZqz7ryR69RcvnmQeXigYf         51   0.00%  94.74%
+ 24000 11w6aAdEq8JPuJ7Q2vcQHdttFkvDGm13wR5BMrBmF7mVQBYrm7b          48   0.00%  95.01%
+ 25000 112fMRKYSv5ubFnMS1iAHxREV4SyWsoWvnBHYK6ywWd5J5ckMqbA         44   0.00%  95.27%
+ 26000 11acc1EgiWNJKzwu6paPfyqzuHE1jc9B4E6ymZ9UuZJm19FEESP          41   0.00%  95.51%
+ 27000 11mhiQzqeWadV1RXXzkuwcMfTEujsUv5AANk4rwSrgtUZU3gZxF          39   0.00%  95.73%
+ 28000 11TmXzEAeX5pdjfMDB3KabobohBBYXr7Abynsrb4QD7h3vHGYFg          36   0.00%  95.94%
+ 29000 1124uRzjRaZjZuqFwbtj9j7sDY3oTRSagqyKbubhJmWQb1cMMLt2         34   0.00%  96.14%
+ 30000 113ektYi1xni3M5cpdgzRT32h66pFyAdchNynXReNiJSxhx9QxT          32   0.00%  96.32%
+ 31000 11kTxNg5eLCmmf2DhX32qxD8Ev9ABhzA41tvhv1icypBrwWX3EE          30   0.00%  96.50%
+ 32000 11mJVQVNdzG3Npy2ebBjDoSZDdSuCbeKJai4XvAg3fZ71vD6qg9          28   0.00%  96.66%
+ 33000 112HxwGxxm5BspZkMSdqCiztSnrRrSTREsPe97SNHDSCQU6jX4HS         27   0.00%  96.82%
+ 34000 11uFKsBmbnqcWrFsbDA9mtrHNjS7xqwaDHzHW7wrVXpdbCWkxFj          25   0.00%  96.96%
+ 35000 112RPaH4bmryQXZyqqkybdoNrrrcKwmLvS3tmZeRWnA7og3GYbp          24   0.00%  97.10%
+ 36000 11tKhrS4XoukmQ3HATAmigGCWVUmTAQrGmHs67i6bFNMBADDeoG          23   0.00%  97.23%
+ 37000 112wRxUsWGbW9C6hhmrKtnUpWcJqNtrFJmfY34MfSFHCj3KgZXk2         21   0.00%  97.35%
+ 38000 112CJAnS1P38UukLhcnXZphMCF6HgHyZWgjo9GzbhUpaDJARywBT         20   0.00%  97.47%
+ 39000 11GqkR48ceeWwyDrRqkCJTpvnkBGJfZB6DdPohX8q3U6sDo7mTb          19   0.00%  97.58%
+ 40000 11y9KUDmGXeudXCBUgo5MRE3r98HZwtxvZVqUobnbisE32BqTPR          18   0.00%  97.68%
+ 41000 112PAEb7RJjhDVDn1GVqWD8f8U6xRNTuBcPb8NyTPKQjXvozx5Hn         17   0.00%  97.78%
+ 42000 11WuGJgoMM7pF1M6eTr8F2UrsoaUeymHPDAQ2sZH3kZpzZm95Bt          16   0.00%  97.88%
+ 43000 11J7piDNq2RfwAaNn9Da6wKuRWVAiJUqsfe9DFYwWTcYoDqRcFx          16   0.00%  97.97%
+ 44000 1129dQV8euW6jnpVfkE2PXPYXkTWrAbUeo2u1j7ji8U71A68eKJm         15   0.00%  98.05%
+ 45000 1122qkeNfpphLJgneAC9xa7jGRfMcveQ6ZEBUdd9Wi4yT4zjohS2         14   0.00%  98.13%
+ 46000 11kf8rqW44WvGgYppG4KXzw6PDT8jHgVRfBeekvCkMzZmu7tAZ9          13   0.00%  98.21%
+ 47000 11xKjKPwo4KTkE3gJidTUxs5Zq3zhB6YU4rfKKZPcEvpCUMdJEu          13   0.00%  98.28%
+ 48000 112mAYBae7Xcz4bQASqvpJzxDqjd26VaBLNjCD3BqFaJXmrHD2UR         12   0.00%  98.35%
+ 49000 11gDSjMK2dfFHS7qKufFCXvf1boPMvQEcE7UbzjGCxrpjuSpVSf          12   0.00%  98.42%
+ 50000 11wp2TZUvtKBJf8m6JVKfRwCVpLvMXqLM7qdiY2xDXBjq3YwkpK          11   0.00%  98.48%
+ 51000 1125XMYmbHWcXWbuTWQZbjb3fw9VpHHKZc834RWWWbHgf6r21ch2         11   0.00%  98.54%
+ 52000 112RVeR32VkTZApVTbUPmKUvjcDnvQqaxFjTy6pNPHKijzSf1toG         10   0.00%  98.60%
+ 53000 11mEtxkBqHU6KUTSNLt9LfVnr6Rz1PHgMv6RVBAWeeWii4keL1E          10   0.00%  98.66%
+ 54000 11xfJQiFRkq7eN1ELvVmSyWfdQqpfWpGWRGN7sbMSZRMVD5EvtL           9   0.00%  98.71%
+ 55000 112BA7zA8i2eYTdxNsp4zrfaPMTGFMWmFwYD5oYDrRo2c3LDRktV          9   0.00%  98.76%
+ 56000 11XjA8REBxAGSQBF8h1DwZLkeXTTLjd42jUtBX5ogBbN2AgxEJC           9   0.00%  98.81%
+ 57000 112sVaxTAQt8YdNjYmZXajz5UFc3F2zHfFvBa4XmioRdZ8eJpSPT          8   0.00%  98.86%
+ 58000 1124QD2TtgGZhcUmhu6K5FMwb7hkBV6ANnXHoo1a2LJ9Bd3cA3zN          8   0.00%  98.90%
+ 59000 112ZosfdFt3apsLtYa2nCMn4h3oU9juzeikDCUNKCztfabqiCPFL          8   0.00%  98.95%
+ 60000 112Mr6WrjmPcdcz72C3oJnK3NAjnPWQ11t3s95w98phLCKpQC69p          7   0.00%  98.99%
+ 61000 112GYeMyt4Jc7RvA41FagSKWsFYoJE6HnXYfhavC2B8DYLzM1w55          7   0.00%  99.03%
+ 62000 11NKGrE8gJ8F4SSZLtksvR1923zMfdfReeG8i17phD1NQXx8pFK           7   0.00%  99.07%
+ 63000 112nA27o55ZgtbZhyc1XNdG8RbT7JEucNHGvZBoQ4RmBeWcEgAP7          6   0.00%  99.11%
+ 64000 112DX697ZHUdArHzu4rEaKbsn65rTYtu1uoEcWby9SmmdBkq22nv          6   0.00%  99.14%
+ 65000 112adUEKPWa3f2ydfahZWSocdG7DuNWt9GVhn2sVbMXmH55xy4eu          6   0.00%  99.17%
+ 66000 112tJ58TpLANypgL1GLJ4yx2MfsFeejsMzw8JshheK8c2LkLmooD          6   0.00%  99.21%
+ 67000 11empXRV8adKaR9hJcG3MEYRGPJxzNqAyNhhNeayTByM3JMXH4j           5   0.00%  99.24%
+ 68000 112rTw4yeV2wSAMKWFkcxsRkCo9LS4vUkJGi3FM9Wkg6i944Z6B9          5   0.00%  99.27%
+ 69000 115oVQ77AVCcLkuQ9Hmud6sFvNnUzPiPdwWwymfByEZ3oFD17Pc           5   0.00%  99.30%
+ 70000 11wEXBFNqBJZfnwKsh6j5yjc5keV8ovjAVsecv6mRyXBXNMQe7e           5   0.00%  99.32%
+ 71000 116zwFnDe2tCLUoqE3pPCy7g8wqV32KM1hvNDziB6FTwnS9MdeF           5   0.00%  99.35%
+ 72000 112cbBadAW4rRLZ7DZRXTMf9L8YTnSXcVKH4BkxRbHbU3UxQf2f1          5   0.00%  99.38%
+ 73000 113kQioeu18BrTFDkWwGZis1JXvgrvZYs8LV4bfZhAKdHbjERte           4   0.00%  99.40%
+ 74000 1122n47gdGUWf5PkHH9g5nkunFquXVmcE51MSKHoMAk1BuFNkG6q          4   0.00%  99.42%
+ 75000 11jxmvPS2CK2rpPtA2CHq7U9Ta8vCkHggPEesZ386VsDSYtTNBz           4   0.00%  99.45%
+ 76000 11JyMbtuJ2JYtVpG1edwFbdToSW4x4BWs7AcK89jNRb9WUWW4qN           4   0.00%  99.47%
+ 77000 11Dgz5YEauuL1L9w6roVmMAYKkuLdqfynr3EngWZGuQbB41kfQ5           4   0.00%  99.49%
+ 78000 1124T5b5qVQdQXuxfGQ7fq2M9ScmCxyUPMBQ3YkSt1JAZ7VoVLPf          4   0.00%  99.51%
+ 79000 112Z5SFzmxqHvAqo7pEc3yTZyt8fiE1j99Gi4k7ZLJZoFHS93edv          3   0.00%  99.54%
+ 80000 115xe87Bw44K5miqa56BgsMQxFARRys3CwtN89C4HcQiyGcn4f8           3   0.00%  99.55%
+ 81000 11G6wjCYdbxvn5sxr1oErL779rNR1Ls5jJW8bo2ofkDQ5EBrDYC           3   0.00%  99.57%
+ 82000 112Mgc8tTqPcUCM8RnT5n2wWgfi9exBjZ3f7ZEyZqnVPA18AMG7Z          3   0.00%  99.59%
+ 83000 11ioXvPHNaugqxfxWKX6DAQ5qs4hZbU8Y1dpm9kibu8G2om6uF8           3   0.00%  99.60%
+ 84000 112bYC951YTHhTr1QEJvhhokYy3jzorhvT7jG43jUGK5bczxtQzn          3   0.00%  99.62%
+ 85000 112PFQ8gySe9FtaZsoJ7sFtUENbiJ9f7rApfPTW64cCnjZSFbdi9          3   0.00%  99.64%
+ 86000 11r1JtDN7zeVJJFS4RF7Y7yKbruXqJaNknNZjgcKW4u7GRx8Gey           3   0.00%  99.65%
+ 87000 112hEdQeoK4SYkYUfTWen64Zdj8sTxUivh5jHyBTHnkJQUWq3sMs          3   0.00%  99.67%
+ 88000 11Nk3d46cWW2GhzYnpTGmWRULWf57Yq6LzDsWuXaFNcEqgsRB23           2   0.00%  99.69%
+ 89000 112CfvNmoeH5TDGMgdQjfRxkgj6YSUftMgkQpjwxtDrRW9pNBwLR          2   0.00%  99.70%
+ 90000 11CddjnfRJjNcF9CscwHrcvT5pAzYVVq8pUdKYFktL2R8AzTjHQ           2   0.00%  99.71%
+ 91000 11FipfthKgWiydMxhsdcdZJbymGbfN2h536YbUAptR72EZBrkgy           2   0.00%  99.72%
+ 92000 112csh8MpAKDdwmyJxdZs9i5BHYAN2Nt8zAsp3ECx9LjDB5HNiCE          2   0.00%  99.73%
+ 93000 11QvYkCEJuYCZzX1RZBng39W94dcEw92ojNrVur5GgGv9Y2WjMB           2   0.00%  99.74%
+ 94000 112PJRbJ4TKLoReVSJ3vfmvxAAVNBbNdcnnyMvmWBr6jfMyGPJTB          2   0.00%  99.75%
+ 95000 1126gJv7iVpAjNpMPC5QcTpeoqtT9B5Kb5pNq7dA6iD1679gQYo4          2   0.00%  99.76%
+ 96000 11ey4bWPLYefm4zKgjvaTYYcuzebn41Zr6f2CdzCCnYEGgot7cy           2   0.00%  99.77%
+ 97000 11eaapMfxU8R49rp1LiTohzmvti4d8TpjVPgSPqZs4ZGMoEDzsP           2   0.00%  99.79%
+ 98000 11WdKcudcaHk76jrFmwyGgTLd3SeKrSGZT6RL7qhfDfSj67m8nQ           2   0.00%  99.80%
+ 99000 112Vg6gCz9L41G6LNeMgkxKtoJKcYFJxMViWWECBhSExJ4jnTbUo          2   0.00%  99.81%
+100000 11kj5B3btHzHkr8kMkRBGZ6DFTNTshfi3RAwzX2Nc8jNyeN1vCj           2   0.00%  99.82%
+101000 112dyEhZy7yz2twzHDBZWKW5Qy7fwVm1ZQ9RPbswFcTZ3Zgk6SU9          2   0.00%  99.83%
+102000 11wXyBSEYnQ16FjZPmDZwRs33FEjxVLZnUoTKMRwvJee3UD69wD           1   0.00%  99.84%
+103000 112n97553bcjfuTorcE61KtpnYNdSw7eAXSmuE27WjBk4pX4zvno          1   0.00%  99.85%
+104000 114Qf3mexZt6PzoasQVzhGKrATMse12Bv8Q9JMSqnMZnwMJJ42N           1   0.00%  99.85%
+105000 112ETttpnZ1spj98Z1EDUMwyiaVGhsVH3gaEgSma8cwFqVicE41Z          1   0.00%  99.86%
+106000 1124ynQsbcneg1CLpz4HymSunJq2JrCPVi2ySSbQMxmZLEy6aG8J          1   0.00%  99.86%
+107000 11rATYtkiuK8W6bczjBK5QyJoqL9EFRcrU3QxzpCxb4fRiwt27z           1   0.00%  99.87%
+108000 112UgR1RAnqppDoA22CMFJPCLsoD6NsbP3PPPEgUbDXeFF3jGSmA          1   0.00%  99.88%
+109000 113TjsuFKUTCa6W39SqFnTQLh5zErwQoPYSu6r92Ur23BGiauY1           1   0.00%  99.88%
+110000 11QScSTWehVLE9DoxF8SCVfocEtAshUNYgLFKyqH6MBTYaFibUH           1   0.00%  99.89%
+111000 116XvEQLHVCr6ycPkNF5MqqbrK2N7wwKwryUCUmLuqoXnvUDwFT           1   0.00%  99.89%
+112000 11yrAqPsY7CXzaRmFsqdNRn9tvZcyrRBoPErfkpAxGvXmnGJhY            1   0.00%  99.90%
+113000 11qtJ6DPYoqNBaVTBpGasGxPPVCafXpPJdGv568LH55g6YLRZvh           1   0.00%  99.90%
+114000 112GbscRhGz3zcs75EzBW9uV6SJhd7nGe2T16sYHSzbKtGkFCDPW          1   0.00%  99.91%
+115000 11TMgZaFWWjxoH8YDzuPp6AhmN816q8rkqxsc1sQritGCV9Z5v8           1   0.00%  99.91%
+116000 112RYtxE5CDHrcrRC2wBLsDkwvWMdZVA9W7pe5yym8d86V8qG31U          1   0.00%  99.92%
+117000 1128wbRctVmNn9BbBLRaciB4xRdBujYycsAEbvd6eJPJ6b4WsvBS          1   0.00%  99.93%
+118000 11iC2LANkY8qipg9gVbwK3FkCUUXXCXjsPjVKNjdbvNJ4o9bQNU           1   0.00%  99.93%
+119000 112dXgsbyMdHSUoAVZWcZdqviVbfSaucr35uh7A2wRAbERrfEH9A          1   0.00%  99.94%
+120000 112wFJbFkGK1fR7tTsNcdH3aKUSn14owWcnheaBJD7sxmHME45jG          1   0.00%  99.94%
+121000 112Jtk2qX1RqNGpfSBQzcsxGcMfrHMWqKyrWAQHbFWWiQGA8t3C           1   0.00%  99.95%
+122000 11R8kuZECU7AKBUEGn8Q6EKiv1hyUsUW3TayTUDLknRJ1pxLGen           1   0.00%  99.95%
+123000 11FCbJxmo6VN2DohEfvpGEnQwE5UhbNemUK4Jkjb5qzJAzEjVby           1   0.00%  99.96%
+124000 11rogDjvY47gThWmtDBT9Hbv6PZAb9tRyzA9FsYCKbh6gbH37Nq           1   0.00%  99.96%
+125000 1126h1wvwtSjQGQuKpATWAxbnRLfUAdKELr6Bw19qScjgJikLKvb          1   0.00%  99.97%
+126000 11Cx1umTUTBf39CCQeUKNomxChSeTMVJinbEBVJ4AQenuBixtHp           1   0.00%  99.98%
+127000 11dnBQ2MXNFhYrj72Re1Y6Yd4tvGcRa6kdwb66ritppX9Cwe974           1   0.00%  99.98%
+128000 11aJHjztcX1b5bR2GpyuC68ckHjnY7ufsu9ekibGaNJMpPaAy93           1   0.00%  99.99%
+129000 11VdnV36r5B5rigkg8qhzTKAXqmgn7H9GNfLiRi6RsPses9ej65           1   0.00%  99.99%
+130000 11sEzvvtytiXHk6J79538GA9UnFCF3bEEtmNDoEdHDd75hAam9i           1   0.00% 100.00%
+total active hotspots: 130265
+===========================================================
+RANK COUNTRIES BY RECEIVED PACKETS (only based on 45 hotspots listed above)
+rank country                        packets   share
+   1 United States                  2809974  15.73%
+   2 The Bahamas                     365658   2.05%
+   3 Germany                         178267   1.00%
+   4 France                          107392   0.60%
+   5 Netherlands                     106293   0.59%
+   6 Bulgaria                         39055   0.22%
+===========================================================
+END
+===========================================================
+

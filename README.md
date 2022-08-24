@@ -1,17 +1,17 @@
 # Helium Data Traffic Analysis
 
-updated 31 May 2022
+updated 24 Aug 2022
 
 ## Background
-[Helium](https://www.helium.com/) is a LoRaWAN network built on a blockchain, to provide incentives to run a 'hotspot' that provides network coverage for IoT devices using LoRaWAN radio technology. It has been growing extremely fast, adding over 80,000 hotspots per month, with at the start of 2022 more than half a million already installed and providing coverage (except for the ones run by scammers; location spoofing is a big problem for the Helium network).
+[Helium](https://www.helium.com/) is a LoRaWAN network built on a blockchain, to provide incentives to run a 'hotspot' that provides network coverage for IoT devices using LoRaWAN radio technology. It has been growing extremely fast, adding up to 80,000 hotspots per month in 2022, with close to 1 million installed and providing coverage by the second half of 2022 (except for the ones run by scammers; location spoofing is a big problem for the Helium network).
 
-Of course the assumption is that more and more people will start using this network to send real IoT device data. Sending data over the network is very cheap, and uses [Data Credits (DC)](https://docs.helium.com/use-the-network/console/data-credits). 
+Of course the assumption has been that more and more people will start using this network to send real IoT device data. Sending data over the network is very cheap, and uses [Data Credits (DC)](https://docs.helium.com/use-the-network/console/data-credits). 
 
 **The question we are trying to answer here is, nevermind the hype, how much real data traffic does the Helium network currently see?**
 
-[Web3 Index](https://web3index.org/helium) does an excellent job showing the trend of DC related to data traffic: it is clear that despite the continuous growth of the Helium network, data traffic is still extremely small, and saw a significant drop in early May 2022.
+[Web3 Index](https://web3index.org/helium) does an excellent job showing the trend of DC related to data traffic: it is clear that despite the continuous growth of the Helium network, data traffic is still extremely small, after peaks in May and June 2022 (which was not real traffic but a scam using Helium console free DC as reported on the Helium [Discord](plotoutput/20220618helium-discord.png) server). Looking at this graph, it is also possible that the entire surge of Jan to June 2022 was a result of this scam, with data traffic going back to 2021 levels.
 
-![[Web3 Index on 31/5/2022](https://web3index.org/helium)](plot_output/20220531web3index.png)
+![[Web3 Index on 24/8/2022](https://web3index.org/helium)](plot_output/20220824web3index-scam.png)
 
 Here we want to dig a bit deeper to check data packet numbers vs hotspots: how many hotspots are actually doing real work?
 
@@ -19,35 +19,105 @@ Here we want to dig a bit deeper to check data packet numbers vs hotspots: how m
 
 My Python script uses the [Helium Blockchain API](https://docs.helium.com/api/blockchain/introduction/) to retrieve data traffic information. It ranks the most active hotspots by data packet count, as this is the best indicator for real traffic (vs DC value as shown by the Web3 Index). 
 
-The main findings are in the table below, and this plot is also revealing: it shows that only about 20,000 hotspots see any significant traffic (down to 100 packets per week), and only 149,000 (17.89% of the 800K+ proudly 'deployed' hotspots) see any traffic at all.
+The main findings are in the table below, and this plot is also revealing: it shows that only about 15,000 hotspots see any significant traffic (at least 100 packets per week), and only 130,000 (14% of the 932K+ proudly 'deployed' hotspots) see any traffic at all. Around 800,000 Helium hotspots do not see any data traffic. At an average cost of USD 500 per hotspot, that is USD 400 million of stranded assets (Data-Only Hotspots are cheaper but only account to less than 0.2% of the total hotspots).
  
-While this analysis is based on 7 days of traffic data (24-31 May 2022), the below plot looked very similar in Feb/March 2022.
+While this analysis is based on 7 days of traffic data (17-24 Aug 2022), the below plot looked very similar in Feb/March/May 2022.
 
-![](plot_output/20220531115029hotspots_data_packets7.png)
+![](plot_output/20220824091415hotspots_data_packets7.png)
 
-The [helium_data_traffic_extraction.py](helium_data_traffic_extraction.py) script tells us (see [extraction_sample_output.txt](extraction_sample_output.txt)):
+The [helium_data_traffic_extraction_1.py](helium_data_traffic_extraction_1.py) script tells us (see [extraction_sample_output.txt](extraction_sample_output.txt)):
 
-| | Feb 2022 | May 2022 | 
-|-----------|----------:|----------:|  
-|Total number of data packets over 7 days| 82,130,820 | 46,953,101|
-|Average data packets per day|11,732,974 | 6,707,586|
-|Total number of active hotspots| 122,258| 149,072|
-|Active hotspots vs total Helium network| 21.27%| 17.89%|
-|Average DC per data packet|1.63 |6.38 |
-|Average DC value per day|USD 191.46 | USD 428.23|
-|Most active single hotspot share of total traffic| 1.38% (161,930 packets/day)| 2.68% (179,727 packets/day)|
-|Details of most active hotspot|[Rough Mango Starling](https://explorer.helium.com/hotspots/11npZsFTPjND7bZZfnk2mcQfryaQJDRYWcr2nwiy584bdvc6pAY): Browan/MerryIoT, its location had not been set, but Taiwan dominated the list of most active hotspots, probably related to stress testing | [Mammoth Mint Butterfly](https://explorer.helium.com/hotspots/14aQjjfit3hYoViBJVzFELpxZmXrP8oGkxycc5ou8Tjbrp72KY7): Data-Only Hotspot without location |
-|Number of hotspots accounting for 20% of total traffic| 54 |  11|
-|Traffic distribution over hotspots| Half of the active hotspots saw less than 10 packets over a week |Half of the active hotspots saw less than 10 packets over a week|
+| | Feb 2022 | May 2022 | Aug 2022 |
+|-----------|----------:|----------:|----------:|  
+|Total number of data packets over 7 days| 82,130,820 | 46,953,101| 17,869,289 |
+|Average data packets per day|11,732,974 | 6,707,586| 2,552,756 |
+|Total number of active hotspots| 122,258| 149,072| 130,265 |
+|Active hotspots vs total Helium network| 21.27%| 17.89%| 13.97% |
+|Average DC per data packet|1.63 |6.38 | 1.47 |
+|Average DC value per day|USD 191.46 | USD 428.23| USD 37.43
+|Most active single hotspot share of total traffic| 1.38% (161,930 packets/day)| 2.68% (179,727 packets/day)| 1.13% (28,766 packets/day) |
+|Details of most active hotspot|[Rough Mango Starling](https://explorer.helium.com/hotspots/11npZsFTPjND7bZZfnk2mcQfryaQJDRYWcr2nwiy584bdvc6pAY): Browan/MerryIoT, its location had not been set, but Taiwan dominated the list of most active hotspots, probably related to stress testing | [Mammoth Mint Butterfly](https://explorer.helium.com/hotspots/14aQjjfit3hYoViBJVzFELpxZmXrP8oGkxycc5ou8Tjbrp72KY7): Data-Only Hotspot without location | [Active Navy Poodle](https://explorer.helium.com/hotspots/112qawmyDWfW13Pb1eoLstThwzbnAPCwEHtLd6gTYS2fXRtJwm8J): SenseCap mining hotspot in Philadelphia, USA (earned $6 in this week, PoC+data) |
+|Number of hotspots accounting for 20% of total traffic| 54 |  11| 45|
+|Traffic distribution over hotspots| Half of the active hotspots saw less than 10 packets over a week |Half of the active hotspots saw less than 10 packets over a week| Half of the active hotspots saw less than 10 packets over a week|
 
 With 'active hotspot' I mean a hotspot that sees real data traffic, not only the Proof-of-Coverage exchanges. 
 
-The most significant changes from Feb to May 2022:
+The most significant changes over Feb-May-Aug 2022:
  
-* Total traffic in terms of data packets has dropped over 40% (comparing a week in Feb with a week in May 2022). Average daily traffic is 6.7 million packets.
-* The average packet size has increased from 1.63 DC to 6.38 DC (factor of 4). The result is that while the number of packets has almost halved, the DC value has doubled.
-* The top 60 most active hotspots now are all [Data-Only Hotspots](https://docs.helium.com/mine-hnt/data-only-hotspots/), i.e. different hardware from the mining hotspots. Regular hotspots (including the recent upgrade to Light Hotspots) participate in Proof-of-Coverage to earn HNT; Data-Only Hotspots only earn from data traffic.
-* While it makes sense for manufacturers to stress test their hotspots, it seems rather strange that at the end of May 2022, the 60 most active hotspots are all Data-Only Hotspots, accounting for more than 50% of total traffic. None of them have their location set (except [1 in Sweden](13XomH7EZanderkHQKdrNeMx7XWDwk6hzobDnCmPcdZdmvNjdYL)).
+* Total traffic in terms of data packets has dropped from 11M per day (Feb 2022) to around 2.5M per day, and traffic has been stable since mid June 2022 (in terms of DC, as seen on [Web3 Index](https://web3index.org/helium))
+* The average packet size has gone back to 1.47 DC per packet (35 bytes) after a peak in May, caused by a [scam](plotoutput/20220618helium-discord.png) abusing free Helium console DC. Scammers were sending max length packets, pulling up the average.
+* Location-less [Data-Only Hotspots](https://docs.helium.com/mine-hnt/data-only-hotspots/) which were the top 60 most active hotspots in May 2022, have disappeared (scam above).
+* The share of active hotspots is decreasing, showing that the growth in hotspot deployment is still outpacing any growth in data traffic (sensor deployment).
+* Data traffic over the Helium network is not growing much, and that does not seem to bother [Helium](https://www.helium.com/): they have moved on to the next hype, their 5G network.
+
+## Country analysis (Aug 2022)
+Based on the above ranking of most active hotspots I retrieved location information of the top 2,000 hotspots in the week 17-24 Aug. Below is the list grouped by country (57), accounting for 11,849,283 packets or 66% of the total traffic. 
+
+* The USA clearly dominates the data traffic, registering 50% of the total packets (with around 38% of total installed hotspots). Europe takes about 25% of traffic, led by France and Germany.
+* Location-less [Data-Only Hotspots](https://docs.helium.com/mine-hnt/data-only-hotspots/) which took 69% of total traffic in May 2022 dropped to 0.18% (country 'None').
+* The Bahamas are a clear outlier: they have more traffic than China, with some very busy hotspots (7x more traffic per hotspot than the average 5k packets per week). All hotspots on the Bahamas seem to be on Nassau island, around 170, and they see more traffic than the 93k hotspots in China (based on this list of top 2,000 hotspots).
+* Overall the numbers have not changed much since May 2022; the USA has seen a significant increase in traffic, especially the city of Philadelphia has 11 of the top 20 most active hotspots. Other countries have seen increases too, but at 50,000-100,000 packets per day that is probably still less than 1,000 sensors deployed.
+
+|country | packet count (week) | share of traffic | hotspot count | avg packets per hotspot (week)|
+|-----------|----------:|----------:|--------:|------:|     
+United States    |5,945,596          |50.18%          |744                 |7,991|
+France             |770,801           |6.51%          |138                 |5,586|
+Germany            |577,521           |4.87%          |136                 |4,246|
+The Bahamas        |485,541           |4.10%           |14                |34,682|
+China              |372,804           |3.15%           |69                 |5,403|
+Italy              |352,039           |2.97%           |98                 |3,592|
+Taiwan             |334,299           |2.82%           |40                 |8,357|
+Canada             |324,822           |2.74%           |98                 |3,315|
+United Kingdom     |324,188           |2.74%           |93                 |3,486|
+Netherlands        |315,655           |2.66%           |61                 |5,175|
+Turkey             |258,679           |2.18%           |80                 |3,233|
+Spain              |255,637           |2.16%           |50                 |5,113|
+Bulgaria           |156,392           |1.32%           |15                |10,426|
+Australia          |134,689           |1.14%           |35                 |3,848|
+fail               |130,252           |1.10%            |0                   |inf|
+Switzerland        |121,619           |1.03%           |41                 |2,966|
+Romania            |114,774           |0.97%           |32                 |3,587|
+Poland              |78,636           |0.66%           |12                 |6,553|
+Lithuania           |75,380           |0.64%           |19                 |3,967|
+Iran                |74,209           |0.63%            |6                |12,368|
+Denmark             |70,997           |0.60%           |19                 |3,737|
+Greece              |52,840           |0.45%            |9                 |5,871|
+Thailand            |43,457           |0.37%            |8                 |5,432|
+Belgium             |40,641           |0.34%           |15                 |2,709|
+Colombia            |40,447           |0.34%            |8                 |5,056|
+Argentina           |36,312           |0.31%            |4                 |9,078|
+South Africa        |30,938           |0.26%           |14                 |2,210|
+Sweden              |28,167           |0.24%           |11                 |2,561|
+Ireland             |23,717           |0.20%            |6                 |3,953|
+Ukraine             |23,358           |0.20%            |5                 |4,672|
+Cyprus              |22,183           |0.19%            |2                |11,092|
+None                |21,544           |0.18%            |5                 |4,309|
+Portugal            |19,812           |0.17%           |13                 |1,524|
+Hungary             |19,218           |0.16%            |7                 |2,745|
+Norway              |18,819           |0.16%            |9                 |2,091|
+Czechia             |16,953           |0.14%            |7                 |2,422|
+Slovenia            |16,691           |0.14%            |5                 |3,338|
+South Korea         |16,428           |0.14%            |3                 |5,476|
+Mexico              |14,192           |0.12%            |4                 |3,548|
+Slovakia            |12,852           |0.11%            |2                 |6,426|
+Brazil              |11,691           |0.10%            |3                 |3,897|
+Costa Rica           |9,375           |0.08%            |1                 |9,375|
+India                |9,016           |0.08%            |1                 |9,016|
+Serbia               |7,144           |0.06%            |4                 |1,786|
+Zimbabwe             |6,998           |0.06%            |1                 |6,998|
+Belarus              |5,359           |0.05%            |2                 |2,680|
+Puerto Rico          |4,753           |0.04%            |3                 |1,584|
+Austria              |4,180           |0.04%            |3                 |1,393|
+Estonia              |3,441           |0.03%            |2                 |1,720|
+Venezuela            |2,618           |0.02%            |1                 |2,618|
+New Zealand          |2,570           |0.02%            |1                 |2,570|
+Malaysia             |1,731           |0.01%            |1                 |1,731|
+Martinique           |1,699           |0.01%            |1                 |1,699|
+Finland              |1,583           |0.01%            |1                 |1,583|
+Albania              |1,482           |0.01%            |1                 |1,482|
+Oman                 |1,277           |0.01%            |1                 |1,277|
+Singapore            |1,267           |0.01%            |1                 |1,267|
+
 
 ## Country analysis (May 2022)
 Based on the above ranking of most active hotspots I retrieved location information of the top 2,000 hotspots in the week 24-31 March. Below is the list grouped by 56 most active countries, accounting for 38,781,194 packets or 82% of the total traffic. It also shows the average packets per hotspot, with a few clear outliers:
@@ -59,7 +129,7 @@ Based on the above ranking of most active hotspots I retrieved location informat
 * Sweden went from 6th place to 4th, tripling its average packets per hotspot from 9,676 to 29,719. 80% of its packets are accounted for by [1 Data-Only Hotspot](https://explorer.helium.com/hotspots/13XomH7EZanderkHQKdrNeMx7XWDwk6hzobDnCmPcdZdmvNjdYL), one of the few Data-Only Hotspots with an asserted location. Sweden has only 24 hotspots in the top 2,000 compared to 624 before, and packets dropped from 6M to 713K per week.
 * Serbia fell from 2nd to 23nd place (from 15.42% to 0.18%), reducing its packets from 10M6 to 71K, with only 32 hotspots in the top 2,000 vs 757 before. Greece is similar. Other European countries remain in the top 20 but have seen their traffic reduced to 10-20% of February levels. It is unlikely that this is due to a reduction in real sensor data traffic, it probably means that Data-Only Hotspots have been deployed in those countries, and the packets that they pick up are not added to this country counts.
 
-### Preliminary conclusion
+### Preliminary conclusion (May 2022)
 
 **While overall traffic has obviously decreased, a large share of real traffic has probably moved to Data-Only Hotspots making our country ranking rather meaningless, as Data-Only Hotspots are not assigned to countries. However, the most active Data-Only Hotspots are seeing unrealistically high volumes of traffic so it is possible that some kind of arbitration is happening.**
 
@@ -213,7 +283,7 @@ UPDATE 25 March 2022: I ran the script again for the last 3 days (only retrievin
 
 The details of data traffic transactions happen in **state channels**, a 'layer 2' technology to keep the huge number of transactions off the main 'layer 1' blockchain. Only the summaries of these DC transactions become part of the Helium blockchain. Helium allows us to access the blockchain via an [API](https://docs.helium.com/api/blockchain/introduction).
 
-The python script [helium_data_traffic_extraction.py](helium_data_traffic_extraction.py) uses this API to analyse the data traffic:
+The python script [helium_data_traffic_extraction_1.py](helium_data_traffic_extraction_1.py) uses this API to analyse the data traffic:
 
 - for a given NUMBER_OF_DAYS we retrieve all the state channels
 - sum the data packets and DCs
@@ -231,7 +301,7 @@ NUMBER_OF_DAYS = 3          # how many days to go back from now
 
 Increasing `FRACTION_THRESHOLD` slows down the completion of the script, as it will make an API call for each hotspot to retrieve its location. 
 
-I decided to use only the 7,000 most active hotspots, representing 90%  of total data traffic. The script [helium_hotspots_csv_details.py](helium_hotspots_csv_details.py) takes the csv output of above extraction script to retrieve hotspots details including locations. With this [output csv](csv_output/20220216145329hotspots_data_packets7_details.csv) I created the Google Map above, and I used this script [helium_data_traffic_country.py](helium_data_traffic_country.py) to create the country list, resulting in this [country_sample_output.txt](country_sample_output.txt).
+I decided to use only the 7,000 most active hotspots, representing 90%  of total data traffic. The script [helium_hotspots_csv_details_2.py](helium_hotspots_csv_details_2.py) takes the csv output of above extraction script to retrieve hotspots details including locations. With this [output csv](csv_output/20220216145329hotspots_data_packets7_details.csv) I created the Google Map above, and I used this script [helium_data_traffic_country_3.py](helium_data_traffic_country_3.py) to create the country list, resulting in this [country_sample_output.txt](country_sample_output.txt).
 
 ## Disclaimer
 
