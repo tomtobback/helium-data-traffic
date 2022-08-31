@@ -9,6 +9,8 @@ Of course the assumption has been that more and more people will start using thi
 
 **The question we are trying to answer here is, nevermind the hype, how much real data traffic does the Helium network currently see?**
 
+If you prefer a video, Coffeezilla has released a good one in Aug 2022, [The Billion Dollar Network No One Uses](https://www.youtube.com/watch?v=LDhU295bUv4). 
+
 [Web3 Index](https://web3index.org/helium) does an excellent job showing the trend of DC related to data traffic: it is clear that despite the continuous growth of the Helium network, data traffic is still extremely small, after peaks in May and June 2022 (which was not real traffic but a scam using Helium console free DC as reported on the Helium [Discord](plotoutput/20220618helium-discord.png) server). Looking at this graph, it is also possible that the entire surge of Jan to June 2022 was a result of this scam, with data traffic going back to 2021 levels.
 
 ![[Web3 Index on 24/8/2022](https://web3index.org/helium)](plot_output/20220824web3index-scam.png)
